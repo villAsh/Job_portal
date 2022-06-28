@@ -2,32 +2,39 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: sans-serif;
 
 }
 *{
     text-transform: capitalize !important;
+    color: var(--black);
 }
 :root{
     --green:#00FF7F;
-    --gray:#808080;
+   /* --gray: #B2BEB5;*/
+    --black:#301934;
 }
 /**************FONTS********/
 h2{
     font-weight: 900;
     letter-spacing: 2px;
 }
+h3{
+    font-weight: 600;
+}
 h5{
-    font-size: 50px;
-    color: var(--gray);
+    font-size: 2.4rem;
+    color: var(--green);
 }
 p{
+    font-size: 18px;
     word-spacing: 1px;
     text-align: justify !important;
+    color: var(--black);
 }
 /**********HEADER SECTION****************/
 section .fa-glasses{
-    color: #100;
+    color: var(--black);
 }
 section span{
     color: var(--green);
@@ -42,18 +49,25 @@ section span{
 /***********Main section************/
 .hireButton{
     border: 2px solid var(--green);
-    border-radius: 9px;
     font-size: 24px;
     font-weight: 700;
-    color: var(--gray);
-    padding: 9px 65px;
+    padding: 8px 55px;
 }
 .signButton{
     border: none;
-    border-radius: 9px;
-    color: var(--gray);
     font-size: 24px;
     font-weight: 700;
     background-color: var(--green);
     padding: 9px 80px;
+}
+/*****************IMAGE SECTION*************/
+.row-content{
+    position: relative;
+}
+.img{
+    z-index: -1 !important;
+    position: absolute !important;
+    left: 20% !important;
+    color: rgba(0, 0, 0, 0.7) !important;
+    opacity: 0.9 !important;
 }
