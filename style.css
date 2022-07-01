@@ -79,6 +79,9 @@ section span{
 }
 /****************MAIN PAGE****************/
 /****************NAVBAR*******************/
+.navbar{
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.7);
+}
 .navbar .navbar-nav{
     margin-left: auto;
 }
@@ -94,7 +97,8 @@ section span{
 }
 /****************Main Section******************/
 #main_section{
-    margin: 3rem 0;
+    height: 50vh;
+    margin-top: 8rem;
 }
 #main_section .btn_search{
     font-size: 0.9rem;
