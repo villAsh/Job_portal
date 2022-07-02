@@ -10,11 +10,15 @@ body{
     color: var(--black);
 }
 :root{
-    --green:#00FF7F;
+    --green:#00E572;
     --gray: #B2BEB5;
     --black:#301934;
+    --more_black:#28282B;
 }
 /**************FONTS********/
+#explore_section h1{
+    color: var(--more_black) !important;
+}
 h2{
     font-weight: 900;
     letter-spacing: 2px;
@@ -22,6 +26,7 @@ h2{
 #main_section h2{
     font-size: 2.4rem !important;
     font-weight: 700;
+    color: var(--more_black);
 }
 h3{
     font-weight: 600;
@@ -67,16 +72,8 @@ section span{
     box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.7);
 }
 /*****************IMAGE SECTION*************/
-.row-content{
-    position: relative;
-}
-.img{
-    z-index: -1 !important;
-    position: absolute !important;
-    left: 10% !important;
-    color: rgba(0, 0, 0, 0.7) !important;
-    opacity: 0.9 !important;
-}
+
+
 /****************MAIN PAGE****************/
 /****************NAVBAR*******************/
 .navbar{
@@ -98,7 +95,7 @@ section span{
 /****************Main Section******************/
 #main_section{
     height: 50vh;
-    margin-top: 8rem;
+    margin: 6rem 0 5rem 0;
 }
 #main_section .btn_search{
     font-size: 0.9rem;
@@ -111,11 +108,32 @@ section span{
     margin: 0 !important;
 }
 #Jumbotron_section h4{
-    font-size: 1rem;
+    font-size: 0.7rem;
     letter-spacing: 1px;
 }
 #Jumbotron_section h3{
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     color: var(--gray);
 }
+/**************explore section************/
+.bn-explore{
+    margin-top: -52px;
+    float: right;
+}
+ #explore_section i{
+    font-size: 22px;
+    padding: 19px;
+    border-radius: 9px;
+    background-color: var(--gray) !important;
+ }
+ #explore_section .fa-briefcase{
+    color: #5D3FD3	;
+ }
+ #explore_section .fa-pen-nib{
+    color: #800000;
+    background-color: #e48794 !important;
+ }
+ #explore_section h5{
+    color: var(--more_black);
+ }
