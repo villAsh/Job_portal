@@ -134,6 +134,40 @@ section span{
     color: #800000;
     background-color: #e48794 !important;
  }
+ #explore_section .fa-headphones-simple{
+    color: #6495ED;
+    background-color: #b3caf5 !important;
+ }
+ #explore_section .fa-paper-plane{
+    color: #DAA520;
+    background-color: #FFFAA0 !important;
+ }
+ #explore_section .fa-laptop-code{
+    color: #100;
+ }
+ #explore_section .fa-ranking-star{
+    color: #D22B2B;
+    background-color: #e2b1b1 !important;
+ }
+ #explore_section .fa-list-check{
+    color: #6495ED;
+    background-color: #b3caf5 !important;
+ }
+ #explore_section .fa-user{
+    color: 	#008000;
+    background-color: #C1E1C1 !important;
+ }
  #explore_section h5{
     color: var(--more_black);
+ }
+ #explore_section .card{
+    border:  1px solid  rgb(87, 87, 87);
+    border-radius: 9px;
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
+    height: 250px;
+    max-width: 300px;
+ }
+ #explore_section .card:hover{
+    transform: scale(0.9);
+    transition: linear .2s;
  }
