@@ -19,9 +19,9 @@ body{
 #explore_section h1{
     color: var(--more_black) !important;
 }
-h2{
+.navbar-brand{
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 #main_section h2{
     font-size: 2.4rem !important;
