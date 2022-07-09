@@ -21,9 +21,9 @@ body{
     letter-spacing: 1px;
 }
 #main_section h2{
-    font-size: 2.4rem !important;
+    font-size: 2.2rem !important;
     font-weight: 700;
-    color: var(--more_black);
+    color: var(--black);
 }
 h3{
     font-weight: 600;
@@ -33,15 +33,13 @@ h5{
     color: var(--green);
 }
 #main_section p{
-    font-size: 15px;
+    font-size: 59px ;
     word-spacing: 1px;
     text-align: justify !important;
     color: var(--black);
 }
 /**********HEADER SECTION****************/
-.btn-login{
-    border: 1px solid var(--green) !important; 
-}
+
 .btn-sign-up:hover{
     background-color: var(--green) !important;
     border-radius: 7px;
@@ -74,14 +72,22 @@ h5{
     margin-left: auto;
 }
 .navbar .navbar-nav .nav-link{
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
     font-weight: 500;
     color: var(--black) !important;
-    margin-right: 10px;
+    margin-right: 7px;
 }
 .navbar .navbar-nav .nav-link:hover{
     border-bottom: 2px solid var(--green);
     margin-top: -10px;
+}
+.dropdown a{
+    font-size: 1.1rem !important;
+    font-weight: 500;
+    color: var(--black);
+}
+.dropdown a:hover{
+    color: var(--black) !important;
 }
 /****************Main Section******************/
 #main_section .img-fluid{
@@ -116,9 +122,11 @@ h5{
     color: var(--gray);
 }
 /**************explore section************/
-.bn-explore{
+.btn-explore{
     margin-top: -52px;
     float: right;
+    color: var(--green) !important;
+    border: 1px solid var(--green) !important;
 }
  #explore_section i{
     font-size: 22px;
@@ -169,6 +177,20 @@ h5{
     transform: scale(0.9);
     transition: linear .2s;
  }
+ /**************ABOUT US**********/
+ #about_us{
+    margin: 100px auto !important;
+}
+ #about_us .imgabout{
+    height: 50vh !important;
+ }
+ #about_us .check-p p{
+    font-size: 14px;
+    font-weight: 800 !important;
+ }
+.fa-check{
+    color: var(--green);
+}
  /***************FOOTER*********/
  footer h5{
     color: white;
