@@ -2,22 +2,19 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-
+    font-family: sans-serif !important;
 }
 *{
     text-transform: capitalize !important;
-    color: var(--black);
 }
 :root{
     --green:#00E572;
     --gray: #B2BEB5;
-    --black:#301934;
-    --more_black:#28282B;
+    --black:#000;
 }
 /**************FONTS********/
 #explore_section h1{
-    color: var(--more_black) !important;
+    color: var(--black) !important;
 }
 .navbar-brand{
     font-weight: 900;
@@ -35,19 +32,13 @@ h5{
     font-size: 2.4rem;
     color: var(--green);
 }
-p{
-    font-size: 18px;
+#main_section p{
+    font-size: 15px;
     word-spacing: 1px;
     text-align: justify !important;
     color: var(--black);
 }
 /**********HEADER SECTION****************/
-section .fa-glasses{
-    color: var(--black);
-}
-section span{
-    color: var(--green);
-}
 .btn-login{
     border: 1px solid var(--green) !important; 
 }
@@ -77,14 +68,14 @@ section span{
 /****************MAIN PAGE****************/
 /****************NAVBAR*******************/
 .navbar{
-    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.7);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 .navbar .navbar-nav{
     margin-left: auto;
 }
 .navbar .navbar-nav .nav-link{
     font-size: 1.2rem !important;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--black) !important;
     margin-right: 10px;
 }
@@ -93,10 +84,18 @@ section span{
     margin-top: -10px;
 }
 /****************Main Section******************/
+#main_section .img-fluid{
+    height: 400px;
+    width: 50vw;
+    position: relative;
+    right: -20%;
+    top: -10%;
+}
 #main_section{
-    height: 50vh;
+    max-height: 50vh;
     margin: 6rem 0 5rem 0;
 }
+/*********/
 #main_section .btn_search{
     font-size: 0.9rem;
     padding: 9px 22px;
@@ -158,12 +157,11 @@ section span{
     background-color: #C1E1C1 !important;
  }
  #explore_section h5{
-    color: var(--more_black);
+    color: var(--black);
  }
  #explore_section .card{
     border:  1px solid  rgb(87, 87, 87);
     border-radius: 9px;
-    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
     height: 250px;
     max-width: 300px;
  }
@@ -171,3 +169,17 @@ section span{
     transform: scale(0.9);
     transition: linear .2s;
  }
+ /***************FOOTER*********/
+ footer h5{
+    color: white;
+ }
+ #footer p{
+    font-size: 15px;
+    color: white;
+ }
+ footer .footer_row{
+    color: #f0f0f0 !important;
+ }
+ footer .fa-glasses{
+    color: white;
+}
