@@ -25,6 +25,11 @@ body{
     font-weight: 700;
     color: var(--black);
 }
+h1{
+    font-size: 2.6rem !important;
+    font-weight: 700 !important;
+    font-style: oblique;
+}
 h3{
     font-weight: 600;
 }
@@ -77,9 +82,11 @@ h5{
     color: var(--black) !important;
     margin-right: 7px;
 }
-.navbar .navbar-nav .nav-link:hover{
+.active,
+ .nav-link:hover{
+    color: var(--green) !important;
     border-bottom: 2px solid var(--green);
-    margin-top: -10px;
+    margin-top: -6px;
 }
 .dropdown a{
     font-size: 1.1rem !important;
@@ -189,6 +196,34 @@ h5{
     font-weight: 800 !important;
  }
 .fa-check{
+    color: var(--green);
+}
+/***************explore jobs************/
+#featured_jobs .featured_jobs_container{
+    border: 1px solid var(--gray) !important;
+    max-width: 100%;
+}
+#featured_jobs .card{
+    cursor: pointer;
+}
+#featured_jobs .fa-star{
+    color: 	#FFC000;
+}
+#featured_jobs .text-muted{
+    font-size: 11px !important;
+}
+#featured_jobs .card-text p{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#featured_jobs .posted_days_ago{
+    font-size: 12px;
+    background-color: rgba(0, 229, 114, 0.2);
+    max-height: 31px !important;
+}
+#featured_jobs .posted_days_ago .fa-clock-rotate-left{
     color: var(--green);
 }
  /***************FOOTER*********/
