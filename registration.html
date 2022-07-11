@@ -6,13 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style_login_register.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  
-  <section>
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./images/logo.svg"
+              alt="Brand Logo"> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+            navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./main_page.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about_us">about us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./find_jobs.html" target="_blank">find jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blogs</a>
+              </li>
+            </ul>
+            <div class="dropdown">
+              <a href="#" role="button" class="text-decoration-none
+                dropdown-toggle" id="dropd" data-bs-toggle="dropdown"
+                aria-expanded="false">Register</a>
+              <ul class="dropdown-menu me-5" aria-labelledby="dropd">
+                <li><a class="dropdown-item" href="./registration.html">As Job
+                    Seeker</a></li>
+                <li><a class="dropdown-item" href="#" >As Employer</a></li>
+                <li><a class="dropdown-item" href="#">As Admin</a></li>
+              </ul>
+            </div>
+            <a href="./login.html">
+              <button class="btn btn-sign-up text-dark ms-3" type="button">
+                Login
+              </button>
+            </a>
+
+          </div>
+        </div>
+      </nav>
+  <section class="">
     <div class="imgBx">
-      <img src="./images/pexels-andrew-neel-3178818.jpg" alt="">
+      <img src="./images/register_img.jfif" alt="">
     </div>
 
     <div class="contentBx">
@@ -22,22 +68,22 @@
 
           <div class="inputBx">
             <span>Full Name</span>
-            <input type="text">
+            <input type="text" required>
           </div>
 
           <div class="inputBx">
             <span>E-mail</span>
-            <input type="text">
+            <input type="text" required>
           </div>
 
           <div class="inputBx">
             <span>Contact Number</span>
-            <input type="text">
+            <input type="text" required>
           </div>
 
           <div class="inputBx">
             <span>Password</span>
-            <input type="password">
+            <input type="password" required>
           </div>
 
           <div class="remember">
@@ -45,15 +91,147 @@
           </div>
 
           <div class="inputBx">
-            <input type="submit" value="Sign up">
+            <input type="submit" value="Sign up" required>
           </div>
 
           <div class="inputBx">
             <p>
-              Already on Get Hire? <a href="./index.html">Sign in</a>
+              Already on Get Hire? <a href="./login.html">Sign in</a>
             </p>
           </div>
-
+      </form>
+      </div>
+      </div>
+      </section>
+      <footer class="bg-dark mt-5 pt-5 pb-4" id="footer">
+        <div class="container text-center text-md-start">
+          <div class="row text-center text-md-start">
+            <div class="col-md-2 col-lg-3 mx-auto mt-3">
+              <h5 class="mb-4">
+                <span style="color: #00e572;">Get</span>Hire <i class="fa
+                  fa-glasses"></i>
+              </h5>
+              <p>
+                Lorem ipsum
+              </p>
+            </div>
+  
+            <div class="col-md-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4" style="color: gray;">
+                Company
+              </h5>
+              <p>
+                <a href="#" class="text-white text-decoration-none">About us</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Careers</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Press</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Privacy policy</a>
+              </p>
+            </div>
+  
+            <div class="col-md-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4" style="color: gray;">
+                Product
+              </h5>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Features</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Pricing</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">News</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Help desk</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Support</a>
+              </p>
+            </div>
+  
+  
+            <div class="col-md-2 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4" style="color: gray;">
+                Services
+              </h5>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Digital
+                  Marketing</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">SEO for
+                  business</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">Avasta Dash</a>
+              </p>
+              <p>
+                <a href="#" class="text-white text-decoration-none">UI Design</a>
+              </p>
+            </div>
+  
+            <div class="col-md-3 mx-auto mt-3">
+              <h5 class="text-uppercase mb-4" style="color: gray;">
+                Contact
+              </h5>
+              <p>
+                <i class="fa fa-home pe-1"></i> New york, NY 2333, US
+              </p>
+              <p>
+                <i class="fa fa-envelope pe-1"></i> gethire@gmail.com
+              </p>
+              <p>
+                <i class="fa fa-phone pe-1"></i> +91 3365289741
+              </p>
+              <p>
+                <i class="fa fa-print pe-1"></i> +01 335 699 784
+              </p>
+            </div>
+          </div>
+          <hr class="mb-4 text-white">
+          <div class="row footer_row align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p>
+                Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2022
+                All rights reserved by:
+                <a href="#" class="text-decoration-none">
+                  <strong style="color: #00e572;">Get Hire</strong>
+                </a>
+              </p>
+            </div>
+  
+            <div class="col-md-5 col-lg-4">
+              <div class="text-center text-md-end">
+                <ul class="list-unstyled list-inline">
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm"><i class="fa-brands
+                        fa-facebook"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm"><i class="fa-brands
+                        fa-twitter"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm"><i class="fa-brands
+                        fa-google"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="btn-floating btn-sm"><i class="fa-brands
+                        fa-linkedin"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </footer>
   <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

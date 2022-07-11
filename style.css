@@ -2,7 +2,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif !important;
+    font-family: 'Roboto Slab',sans-serif !important;
 }
 *{
     text-transform: capitalize !important;
@@ -15,10 +15,6 @@ body{
 /**************FONTS********/
 #explore_section h1{
     color: var(--black) !important;
-}
-.navbar-brand{
-    font-weight: 900;
-    letter-spacing: 1px;
 }
 #main_section h2{
     font-size: 2.2rem !important;
@@ -85,7 +81,7 @@ h6{
 }
 .navbar .navbar-nav .nav-link{
     font-size: 1.1rem !important;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--black) !important;
     margin-right: 7px;
 }
@@ -97,7 +93,7 @@ h6{
 }
 .dropdown a{
     font-size: 1.1rem !important;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--black);
 }
 .dropdown a:hover{
@@ -213,14 +209,17 @@ h6{
 #featured_jobs .card{
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
 }
 #featured_jobs .fa-star{
     color: 	#FFC000;
 }
 #featured_jobs .text-muted{
-    font-size: 10px !important;
+    font-size: 12px !important;
+    padding: 10px 0;
 }
 #featured_jobs .card-text p{
+    margin-top: 12px;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
