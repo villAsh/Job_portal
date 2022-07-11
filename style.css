@@ -33,9 +33,16 @@ h1{
 h3{
     font-weight: 600;
 }
+h4{
+    font-size: 22px !important;
+}
 h5{
     font-size: 2.4rem;
     color: var(--green);
+}
+h6{
+    font-size: 14px !important;
+    font-weight: 600 !important;
 }
 #main_section p{
     font-size: 59px ;
@@ -205,12 +212,13 @@ h5{
 }
 #featured_jobs .card{
     cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 #featured_jobs .fa-star{
     color: 	#FFC000;
 }
 #featured_jobs .text-muted{
-    font-size: 11px !important;
+    font-size: 10px !important;
 }
 #featured_jobs .card-text p{
     width: 100%;
@@ -219,13 +227,18 @@ h5{
     text-overflow: ellipsis;
 }
 #featured_jobs .posted_days_ago{
-    font-size: 12px;
+    font-size: 10px;
     background-color: rgba(0, 229, 114, 0.2);
     max-height: 31px !important;
 }
 #featured_jobs .posted_days_ago .fa-clock-rotate-left{
     color: var(--green);
 }
+#featured_jobs .fa-bookmark{
+    color: var(--gray);
+    font-size: 25px; 
+}
+
  /***************FOOTER*********/
  footer h5{
     color: white;
