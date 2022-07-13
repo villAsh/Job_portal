@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
   <title>Get-Hire:Start Searching</title>
   <style>
     body{
@@ -127,7 +131,7 @@
                 <ul class="dropdown-menu me-5" aria-labelledby="dropd">
                   <li><a class="dropdown-item" href="./registration.html">As Job
                       Seeker</a></li>
-                  <li><a class="dropdown-item" href="#">As Employer</a></li>
+                  <li><a class="dropdown-item" href="./employer_regi.html">As Employer</a></li>
                   <li><a class="dropdown-item" href="#">As Admin</a></li>
                 </ul>
               </div>
@@ -156,23 +160,26 @@
                 <img src="./images/find_jobs_search_icon.svg" alt="searchlogo" class="pe-2">
             </div>
             <div class="form_input d-flex">
-                    <div class="job_desig input-group form-check-inline ">
-                        <input type="text" placeholder="Enter Designation " class="border-0 me-0 desig">
+                    <div class="job_desig input-group form-check-inline bg-light">
+                        <input type="text" placeholder="Enter Designation " class="border-0 bg-light me-0 desig">
                     </div>
                     <div class="job_exp input-group text-center">
-                        <input list="exp" class="border-0 me-2" placeholder="Select Experience">
+                        <input list="exp" class="border-0 bg-light me-2" placeholder="Select Experience">
+                          <div>
                             <datalist id="exp">
-                                <option value="fresher"></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </datalist>
+                              <option value="fresher"></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                          </datalist>
+                          </div>  
+                      
                     </div>
                     <div class="job_loc location input-group">
-                        <input type="text" name="location_search" id="loc" class="border-0" placeholder="Location">
+                        <input type="text" name="location_search" id="loc" class="border-0 bg-light" placeholder="Location">
                     </div> 
-                    <div class="search_button">
+                    <div class="search_button ms-1">
                         <button class="rounded-3 me-3 search_btn border-0" type="btn">Search</button>
                     </div> 
             </div>
