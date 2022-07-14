@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
-  referrerpolicy="no-referrer" />
-  <title>Get-Hire:Start Searching</title>
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <title>Get-Hire:Start Searching</title>
+    <style>
     body{
-      width: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -60,7 +60,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
+    max-width: 100%;
     height: 50vh;
     z-index: -1;
     filter: brightness(0.3);
@@ -95,97 +95,452 @@
     color: white;
     background-color: var(--green);
 }
+/**********accordion************/
+#job_format .col-3{
+  padding-left: 0 !important;
+}
+.card{
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .fa-star {
+            color: #FFC000;
+        }
+
+        .card-text p {
+            margin-top: 12px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .posted_days_ago {
+            font-size: 14px;
+            background-color: rgba(0, 229, 114, 0.2);
+            max-height: 35px !important;
+        }
+
+        .posted_days_ago .fa-clock-rotate-left {
+            color: var(--green);
+        }
+
+        .card-footer {
+            background-color: white !important;
+        }
+
+        .saveBtn {
+            padding: 7px 19px;
+            border: 1px solid var(--green);
+            outline: none !important;
+            background-color: white !important;
+        }
+
+        .applyBtn {
+            padding: 7px 19px;
+            background-color: var(--green) !important;
+            border: 1px solid white;
+        }
+
   </style>
-</head>
-<body>
+  </head>
+  <body>
     <section id="navbar">
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./images/logo.svg"
-                alt="Brand Logo"> </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
-              navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="./main_page.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./main_page.html">about us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#jobs_page">find jobs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blogs</a>
-                </li>
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./images/logo.svg"
+              alt="Brand Logo"> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+            navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./main_page.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./main_page.html">about us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#jobs_page">find jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blogs</a>
+              </li>
+            </ul>
+            <div class="dropdown">
+              <a href="#" role="button" class="text-decoration-none
+                dropdown-toggle" id="dropd" data-bs-toggle="dropdown"
+                aria-expanded="false">Register</a>
+              <ul class="dropdown-menu me-5" aria-labelledby="dropd">
+                <li><a class="dropdown-item" href="./registration.html">As Job
+                    Seeker</a></li>
+                <li><a class="dropdown-item" href="./employer_regi.html">As
+                    Employer</a></li>
+                <li><a class="dropdown-item" href="#">As Admin</a></li>
               </ul>
-              <div class="dropdown">
-                <a href="#" role="button" class="text-decoration-none
-                  dropdown-toggle" id="dropd" data-bs-toggle="dropdown"
-                  aria-expanded="false">Register</a>
-                <ul class="dropdown-menu me-5" aria-labelledby="dropd">
-                  <li><a class="dropdown-item" href="./registration.html">As Job
-                      Seeker</a></li>
-                  <li><a class="dropdown-item" href="./employer_regi.html">As Employer</a></li>
-                  <li><a class="dropdown-item" href="#">As Admin</a></li>
-                </ul>
+            </div>
+            <a href="./login.html">
+              <button class="btn btn-sign-up text-dark ms-3" type="button">
+                Login
+              </button>
+            </a>
+
+          </div>
+        </div>
+      </nav>
+    </section>
+    <section class="search1" id="search_bg">
+      <div class="search">
+      </div>
+      <div class="header">
+        <h1>Find your dream job now</h1>
+        <div class="text-center">
+          <h6 class="text-white">jobs for you to explore</h6>
+        </div>
+
+      </div>
+      <div class="search_bar bg-light d-flex">
+        <div class="input-group">
+          <img src="./images/find_jobs_search_icon.svg" alt="searchlogo"
+            class="pe-2">
+        </div>
+        <div class="form_input d-flex">
+          <div class="job_desig input-group form-check-inline bg-light">
+            <input type="text" placeholder="Enter Designation"class="border-0
+              bg-light me-0 desig">
+          </div>
+          <div class="job_exp input-group text-center">
+            <input list="exp" class="border-0 bg-light me-2" placeholder="Select Experience">
+            <div>
+              <datalist id="exp">
+                <option value="fresher"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </datalist>
+            </div>
+
+          </div>
+          <div class="job_loc location input-group">
+            <input type="text" name="location_search" id="loc" class="border-0
+              bg-light" placeholder="Location">
+          </div>
+          <div class="search_button ms-1">
+            <button class="rounded-3 me-3 search_btn border-0" type="btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid mt-4" id="job_format">
+      <!--    accordion                     -->
+      <div class="row">
+        <div class="col-3">
+          <h6 class="ms-2 p-2">Filters <i class="fa-solid fa-filter"></i></h6>
+          <div class="accordion accordion-flush" id="filter_accordion">
+            <!--            accordion-1            -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="exp_header">
+                <button class="accordion-button text-dark" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#exp_accordion"
+                  aria-controls="exp_accordion">Experience</button>
+              </h2>
+              <div id="exp_accordion" class="accordion-collapse collapse show"
+                data-parent="filter_accordion">
+                <div class="accordion-body">
+                  <input type="checkbox" id="fresher">
+                  <label for="fresher">Fresher</label><br>
+                  <input type="checkbox" id="yearOne">
+                  <label for="yearOne">1 years</label><br>
+                  <input type="checkbox" id="yearTwo">
+                  <label for="yearTwo">2 years</label><br>
+                  <input type="checkbox" id="yearThree">
+                  <label for="frehser">3 years</label><br>
+                  <input type="checkbox" id="yearFour">
+                  <label for="yearFour">4 years</label><br>
+                  <input type="checkbox" id="fivePlus">
+                  <label for="fivePlus">5+ years</label>
+                </div>
               </div>
-              <a href="./login.html">
-                <button class="btn btn-sign-up text-dark ms-3" type="button">
-                  Login
-                </button>
-              </a>
-  
+            </div>
+            <!--              accordion-2            -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="role_header">
+                <button class="accordion-button text-dark" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#role_accordion"
+                  aria-controls="role_accordion">Role Category</button>
+              </h2>
+              <div class="accordion-collapse collapse show" id="role_accordion" data-parent="filter_accordion">
+                <div class="accordion-body">
+                  <input type="checkbox" id="softdev">
+                  <label for="softdev">Software Developer</label><br>
+                  <input type="checkbox" id="BD">
+                  <label for="BD">Bussiness Developement</label><br>
+                  <input type="checkbox" id="design">
+                  <label for="design">Design</label><br>
+                  <input type="checkbox" id="sc">
+                  <label for="sc">sales & communication</label><br>
+                  <input type="checkbox" id="cs">
+                  <label for="cs">Customer Services</label><br>
+                  <input type="checkbox" id="mm">
+                  <label for="mm">Marketing & management</label><br>
+                  <input type="checkbox" id="hr">
+                  <label for="hr">Human resource</label><br>
+                  <input type="checkbox" id="pm">
+                  <label for="pm">Project management</label>
+                </div>
+              </div>
+            </div>
+            <!--             accordion-3                -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="edu_header">
+                <button class="accordion-button text-dark" type="button"
+                data-bs-toggle="collapse" data-bs-target="#edu_accordion">Education</button>
+              </h2>
+              <div class="accordion-collapse collapse show" id="edu_accordion"
+              data-parent="filter_accordion">
+                <div class="accordion-body">
+                  <input type="checkbox" id="any">
+                  <label for="any">Any Graduate</label><br>
+                  <input type="checkbox" id="bca">
+                  <label for="bca">BCA</label><br>
+                  <input type="checkbox" id="mca">
+                  <label for="mca">MCA</label><br>
+                  <input type="checkbox" id="be">
+                  <label for="be">BE</label><br>
+                  <input type="checkbox" id="btech">
+                  <label for="btech">BTech(CS)</label><br>
+                  <input type="checkbox" id="bba">
+                  <label for="bba">BBA</label><br>
+                  <input type="checkbox" id="mba">
+                  <label for="mba">MBA/PGDM</label><br>
+                  <input type="checkbox" id="bsc">
+                  <label for="bsc">BSC</label><br>
+                  <input type="checkbox" id="msc">
+                  <label for="msc">MSC</label><br>
+                  <input type="checkbox" id="bms">
+                  <label for="bms">BMS</label><br>
+                </div>
+              </div>
+            </div>
+            <!--          accrodion-4                -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="city_header">
+                <button class="accordion-button text-dark" data-bs-toggle="collapse" 
+                data-bs-target="#city_accordion">City</button>
+              </h2>
+              <div class="accordion-collapse collapse show" id="city_accordion" data-parent="filter_accordion">
+                <div class="accordion-body">
+                  <input type="checkbox" id="amd">
+                  <label for="amd">Ahmadabad</label><br>
+                  <input type="checkbox" id="bng">
+                  <label for="bng">Bangalore</label><br>
+                  <input type="checkbox" id="hyd">
+                  <label for="hyd">Hyderabad</label><br>
+                  <input type="checkbox" id="chn">
+                  <label for="chn">Chennai</label><br>
+                  <input type="checkbox" id="pun">
+                  <label for="pun">Pune</label><br>
+                  <input type="checkbox" id="bmb">
+                  <label for="bmb">Mumbai</label><br>
+                  <input type="checkbox" id="del">
+                  <label for="del">Delhi</label><br>
+                </div>
+              </div>
+            </div>
+            <!--        accordion-5                 -->
+            <div class="accordion-item"> 
+              <h2 class="accordion-header" id="sal_header">
+                <button class="accordion-button text-dark" data-bs-toggle="collapse" 
+                data-bs-target="#salary_accordion">Salary</button>
+              </h2>
+              <div class="accordion-collapse collapse show" id="salary_accordion" data-parent="filter_accordion">
+                <div class="accordion-body">
+                  <input type="checkbox" id="one-two">
+                  <label for="one-two">1-2 LPA</label><br>
+                  <input type="checkbox" id="three-six">
+                  <label for="three-six">3-6 LPA</label><br>
+                  <input type="checkbox" id="six-nine">
+                  <label for="six-nine">6-9 LPA</label><br>
+                  <input type="checkbox" id="ten_plus">
+                  <label for="ten_plus">10+ LPA</label><br>
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
-      </section>
-      <section class="search1" id="search_bg">
-        <div class="search">
         </div>
-        <div class="header">
-            <h1>Find your dream job now</h1>
-            <div class="text-center">
-                <h6 class="text-white">jobs for you to explore</h6>
-            </div>
-         
-        </div>
-        <div class="search_bar bg-light d-flex">
-            <div class="input-group">
-                <img src="./images/find_jobs_search_icon.svg" alt="searchlogo" class="pe-2">
-            </div>
-            <div class="form_input d-flex">
-                    <div class="job_desig input-group form-check-inline bg-light">
-                        <input type="text" placeholder="Enter Designation " class="border-0 bg-light me-0 desig">
+        <div class="col-9">
+          <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h4>Front End Developer</h4>
+                </div>
+                <div class="card-text text-start">
+                    <h6>LogicRays &#183; <i class="fa-solid fa-star
+                            fa-sm"></i>4.5</h6>
+                    <div class="text-muted text-start">
+                        <div>
+                            <i class="fa-solid fa-briefcase me-2"></i>1-4
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-indian-rupee-sign
+                                me-2"></i>not
+                            disclosed
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-location-dot
+                                me-2"></i>Ahamadabad
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-graduation-cap
+                                me-1"></i>Qualification
+                            : Graduate
+                        </div>
                     </div>
-                    <div class="job_exp input-group text-center">
-                        <input list="exp" class="border-0 bg-light me-2" placeholder="Select Experience">
-                          <div>
-                            <datalist id="exp">
-                              <option value="fresher"></option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                          </datalist>
-                          </div>  
-                      
+                    <p class="pt-1">Lorem ipsum dolor sit amet
+                        consectetur
+                        adipisicing elit. Consequatur reprehenderit
+                        hic omnis
+                        architecto perferendis accusantium, numquam
+                        iste temporibus.
+                        Sit, inventore?</p>
+                </div>
+                <div class="skills text-black-50">
+                    <h6>HTML &#183; css &#183; javascript &#183;
+                        Bootstrap &#183;
+                    </h6>
+                </div>
+                <div class="card-footer">
+                    <div class="posted_days_ago d-inline-block p-2
+                        rounded-3">
+                        <p><i class="fa-solid fa-clock-rotate-left"></i>
+                            15 days ago</p>
                     </div>
-                    <div class="job_loc location input-group">
-                        <input type="text" name="location_search" id="loc" class="border-0 bg-light" placeholder="Location">
-                    </div> 
-                    <div class="search_button ms-1">
-                        <button class="rounded-3 me-3 search_btn border-0" type="btn">Search</button>
-                    </div> 
+                    <div class="bookmark d-inline-block float-end">
+                        <button class="text-success saveBtn"
+                            type="button">Save</button>
+                        <button class="text-light applyBtn">Apply</button>
+                    </div>
+                </div>
             </div>
         </div>
-      </section>
+        <div class="card">
+          <div class="card-body">
+              <div class="card-title">
+                  <h4>Front End Developer</h4>
+              </div>
+              <div class="card-text text-start">
+                  <h6>LogicRays &#183; <i class="fa-solid fa-star
+                          fa-sm"></i>4.5</h6>
+                  <div class="text-muted text-start">
+                      <div>
+                          <i class="fa-solid fa-briefcase me-2"></i>1-4
+                      </div>
+                      <div>
+                          <i class="fa-solid fa-indian-rupee-sign
+                              me-2"></i>not
+                          disclosed
+                      </div>
+                      <div>
+                          <i class="fa-solid fa-location-dot
+                              me-2"></i>Ahamadabad
+                      </div>
+                      <div>
+                          <i class="fa-solid fa-graduation-cap
+                              me-1"></i>Qualification
+                          : Graduate
+                      </div>
+                  </div>
+                  <p class="pt-1">Lorem ipsum dolor sit amet
+                      consectetur
+                      adipisicing elit. Consequatur reprehenderit
+                      hic omnis
+                      architecto perferendis accusantium, numquam
+                      iste temporibus.
+                      Sit, inventore?</p>
+              </div>
+              <div class="skills text-black-50">
+                  <h6>HTML &#183; css &#183; javascript &#183;
+                      Bootstrap &#183;
+                  </h6>
+              </div>
+              <div class="card-footer">
+                  <div class="posted_days_ago d-inline-block p-2
+                      rounded-3">
+                      <p><i class="fa-solid fa-clock-rotate-left"></i>
+                          15 days ago</p>
+                  </div>
+                  <div class="bookmark d-inline-block float-end">
+                      <button class="text-success saveBtn"
+                          type="button">Save</button>
+                      <button class="text-light applyBtn">Apply</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h4>Front End Developer</h4>
+            </div>
+            <div class="card-text text-start">
+                <h6>LogicRays &#183; <i class="fa-solid fa-star
+                        fa-sm"></i>4.5</h6>
+                <div class="text-muted text-start">
+                    <div>
+                        <i class="fa-solid fa-briefcase me-2"></i>1-4
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-indian-rupee-sign
+                            me-2"></i>not
+                        disclosed
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-location-dot
+                            me-2"></i>Ahamadabad
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-graduation-cap
+                            me-1"></i>Qualification
+                        : Graduate
+                    </div>
+                </div>
+                <p class="pt-1">Lorem ipsum dolor sit amet
+                    consectetur
+                    adipisicing elit. Consequatur reprehenderit
+                    hic omnis
+                    architecto perferendis accusantium, numquam
+                    iste temporibus.
+                    Sit, inventore?</p>
+            </div>
+            <div class="skills text-black-50">
+                <h6>HTML &#183; css &#183; javascript &#183;
+                    Bootstrap &#183;
+                </h6>
+            </div>
+            <div class="card-footer">
+                <div class="posted_days_ago d-inline-block p-2
+                    rounded-3">
+                    <p><i class="fa-solid fa-clock-rotate-left"></i>
+                        15 days ago</p>
+                </div>
+                <div class="bookmark d-inline-block float-end">
+                    <button class="text-success saveBtn"
+                        type="button">Save</button>
+                    <button class="text-light applyBtn">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+      </div>
+    </section>
 
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
