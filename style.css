@@ -22,8 +22,15 @@ body{
     color: var(--black);
 }
 h1{
-    font-size: 2.6rem !important;
+    font-size: 3rem !important;
     font-weight: 600 !important;
+}
+.txt-green{
+    color: var(--green);
+    font-size: 3.5rem;
+    border-bottom: 4px solid var(--green);
+    padding-top: 8px;
+    
 }
 h3{
     font-weight: 600;
@@ -114,7 +121,12 @@ h6{
 #main_section .btn_search{
     font-size: 0.9rem;
     padding: 9px 22px;
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+#main_section .btn_search:hover{
     background-color: var(--green);
+    color: whitesmoke;
 }
 /****************JUMBOTRON SECTION***********/
 #Jumbotron_section{
@@ -205,15 +217,14 @@ h6{
     color: var(--green);
 }
 /***************explore jobs************/
-#featured_jobs .featured_jobs_container{
-    border: 1px solid var(--gray) !important;
-    max-width: 100%;
-}
 
 #featured_jobs .card{
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
+}
+#featured_jobs .card:hover{
+    border: 4px solid var(--gray);
 }
 #featured_jobs .fa-star{
     color: 	#FFC000;
