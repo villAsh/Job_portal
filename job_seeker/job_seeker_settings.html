@@ -74,6 +74,15 @@
           margin-top: -10px;
           font-size: 0.8rem;
         }
+        #edu_modal h5{
+          color: var(--black);
+        }
+        #edu_modal label{
+          color: gray;
+        }
+        #skill_modal button{
+          margin: 5px 4px;
+        }
     </style>
 </head>
 <body>
@@ -174,7 +183,7 @@
               <h5>Headline</h5>
               <h5>Profile Summary</h5>
               <h5>Education      <a href="#"  data-bs-toggle="modal" data-bs-target="#edu_modal">ADD</a></h5>
-              <h5>Skills         <a href="#">ADD</a></h5>
+              <h5>Skills         <a href="#"  data-bs-toggle="modal" data-bs-target="#skill_modal">ADD</a></h5>
               <h5>Project        <a href="#">ADD</a></h5>
               <h5>Certifications <a href="#">ADD</a></h5>
               <h5>Accomplishments<a href="#">ADD</a></h5>
@@ -208,91 +217,12 @@
                 <h5>Add Phd</h5>
               </div>
             </div>
-            <!--   EDUCATION DETAILS MODAL            -->
-            <div class="modal fade" id="edu_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content p-3">
-                  <div class="modal-body">
-                    <h5>Add Education</h5>
-                    <form action="POST">
-                     <div class="mb-4">
-                      <label for="education" class="form-label d-block">Education</label>
-                      <select name="education-select" id="education" class="form-select" aria-label="select education">
-                        <option value="choose education"  selected>Select Education</option>
-                        <option value="10th">10th</option>
-                        <option value="12th">12th</option>
-                        <option value="graduate">Graduate</option>
-                        <option value="Post-Graduate">Post-Graduate</option>
-                      </select>
-                     </div>
-                     <div class="mb-4">
-                        <label for="course" class="form-label d-block">Course</label>
-                        <select name="course-select" id="course" class="form-select" aria-label="select course">
-                          <option value="selection">Select Course</option>
-                          <option value="BCA">BCA</option>
-                          <option value="BCOM">BCOM</option>
-                          <option value="BSC">BSC</option>
-                          <option value="B-ARCH">B-ARCH</option>
-                          <option value="BE">BE</option>
-                          <option value="BTECH">BTECH</option>
-                          <option value="MBA">BBA</option>
-                          <option value="BA">BA</option>
-                          <option value="BMM">BMM</option>
-                          
-                        </select>
-                      
-                     </div>
-                     <div class="mb-4">
-                      <label for="specializaton" class="form-label d-block" aria-label="select specializaton">Specialization</label>
-                      <select name="specializaton_select" class="form-select" id="specialization">
-                        <option value="select ">select Specialization</option>
-                        <option value="cs">Computer Science</option>
-                        <option value="cse ">Computer science Engineering</option>
-                        <option value="web">Web Developement</option>
-                        <option value="ad">Android Developement </option>
-                        <option value="ios">Ios Developement</option>
-                        <option value="hr">Human Resource</option>
-                      </select>
-                    </div>
-                    <div class="mb-4">
-                      <label for="university" class="form-label d-block" aria-label="select university">University/Institute</label>
-                      <select name="university_select" class="form-select" id="university">
-                        <option value="select">Select University</option>
-                        <option value="gu">Gujarat Universtiy</option>
-                        <option value="lpu">LPU</option>
-                      </select>
 
-                    </div>
-                    <div class="mb-4">
-                      <label for="nothing" class="d-block mb-2">Course Type</label>
-                      <div class="row justify-content-md-between">
-                        <div class="form-check col-12 col-md-4">
-                          <input type="radio" class="form-check-input" name="fulltime" id="fulltime">
-                          <label for="fulltime" class="form-check-label">Full-Time</label>
-                        </div>
-                        <div class="form-check col-12 col-md-4">
-                          <input type="radio" class="form-check-input" name="partime" id="partime">
-                          <label for="fulltime" class="form-check-label">Part-Time</label>
-                        </div>
-                        <div class="form-check col-12 col-md-4">
-                          <input type="radio" class="form-check-input" name="dl" id="dl">
-                          <label for="dl" class="form-check-label">Distance Learning</label>
-                        </div>
-                      </div>
-                    </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
-                    <button type="button" class="btn btn-primary btn_save">SAVE</button>
-                  </div>
-                </div>
-              </div>
-              </div>
+
       
             
             <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-2 p-2 d-inline-block">Skills</h2><a href="#"><h4>ADD SKILLS</h4></a>
+              <h2 class="mt-2 p-2 d-inline-block">Skills</h2><a href="#" data-bs-toggle="modal" data-bs-target="#skill_modal"><h4>ADD SKILLS</h4></a>
                <div class="badge_div container-fluid">
                 <div class="row">
                   <div class="col-3 col-md-2 mx-2 my-2">
@@ -353,7 +283,153 @@
             </div>
         </div>
       </section>
-    
+                  <!--   EDUCATION DETAILS MODAL            -->
+      <div class="modal fade" id="edu_modal" tabindex="-1" aria-labelledby="edu_modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content p-3">
+            <div class="modal-body">
+              <h5>Add Education</h5>
+              <form action="POST">
+               <div class="mb-4">
+                <label for="education" class="form-label d-block">Education</label>
+                <select name="education-select" id="education" class="form-select" aria-label="select education">
+                  <option value="choose education"  selected>Select Education</option>
+                  <option value="10th">10th</option>
+                  <option value="12th">12th</option>
+                  <option value="graduate">Graduate</option>
+                  <option value="Post-Graduate">Post-Graduate</option>
+                </select>
+               </div>
+               <div class="mb-4">
+                  <label for="course" class="form-label d-block">Course</label>
+                  <select name="course-select" id="course" class="form-select" aria-label="select course">
+                    <option value="selection">Select Course</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BCOM">BCOM</option>
+                    <option value="BSC">BSC</option>
+                    <option value="B-ARCH">B-ARCH</option>
+                    <option value="BE">BE</option>
+                    <option value="BTECH">BTECH</option>
+                    <option value="MBA">BBA</option>
+                    <option value="BA">BA</option>
+                    <option value="BMM">BMM</option>
+                    
+                  </select>
+                
+               </div>
+               <div class="mb-4">
+                <label for="specializaton" class="form-label d-block" aria-label="select specializaton">Specialization</label>
+                <select name="specializaton_select" class="form-select" id="specialization">
+                  <option value="select " selected>select Specialization</option>
+                  <option value="cs">Computer Science</option>
+                  <option value="cse ">Computer science Engineering</option>
+                  <option value="web">Web Developement</option>
+                  <option value="ad">Android Developement </option>
+                  <option value="ios">Ios Developement</option>
+                  <option value="hr">Human Resource</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="university" class="form-label d-block" aria-label="select university">University/Institute</label>
+                <select name="university_select" class="form-select" id="university">
+                  <option value="select" selected>Select University</option>
+                  <option value="gu">Gujarat Universtiy</option>
+                  <option value="lpu">LPU</option>
+                </select>
+
+              </div>
+              <div class="mb-4">
+                <label for="nothing" class="d-block mb-2">Course Type</label>
+                <div class="row ">
+                  <div class="form-check col-12 col-md-4 ps-5">
+                    <input type="radio" class="form-check-input" name="fulltime" id="fulltime">
+                    <label for="fulltime" class="form-check-label">Full-Time</label>
+                  </div>
+                  <div class="form-check col-12 col-md-4">
+                    <input type="radio" class="form-check-input" name="partime" id="partime">
+                    <label for="fulltime" class="form-check-label">Part-Time</label>
+                  </div>
+                  <div class="form-check col-12 col-md-4">
+                    <input type="radio" class="form-check-input" name="dl" id="dl">
+                    <label for="dl" class="form-check-label">Distance Learning</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="passingyear" class="form-label">Passing Year</label>
+                <select name="passingyear" id="passingyear" class="form-select">
+                  <option value="selection" selected>Select Passing Year</option>
+                  <option value="2023" >2023</option>
+                  <option value="2022" >2022</option>
+                  <option value="2021" >2021</option>
+                  <option value="2020" >2020</option>
+                  <option value="2019" >2019</option>
+                  <option value="2018" >2018</option>
+                  <option value="2017" >2017</option>
+                  <option value="2016" >2016</option>
+                  <option value="2015" >2015</option>
+                  <option value="2014" >2014</option>
+                  <option value="2013" >2013</option>
+                  <option value="2012" >2012</option>
+                  <option value="2011" >2011</option>
+                  <option value="2010" >2010</option>
+                  <option value="2009" >2009</option>
+                  <option value="2008" >2008</option>
+                  <option value="2007" >2007</option>
+                  <option value="2006" >2006</option>
+                  <option value="2005" >2005</option>
+                  <option value="2004" >2004</option>
+                  <option value="2003" >2003</option>
+                  <option value="2002" >2002</option>
+                  <option value="2001" >2001</option>
+                  <option value="2000" >2000</option>
+
+                </select>
+              </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+              <button type="button" class="btn btn-primary btn_save">SAVE</button>
+            </div>
+          </div>
+        </div>
+        </div>  
+
+        <div class="modal fade" id="skill_modal" tabindex="-1" aria-labelledby="skill_modal" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="d-flex flex-row justify-content-start flex-wrap p-3">
+                      <button class="btn btn-outline-primary">HTML</button>
+                      <button class="btn btn-outline-primary">CSS</button>
+                      <button class="btn btn-outline-primary">JavaScript</button>
+                      <button class="btn btn-outline-primary">Jquery</button>
+                      <button class="btn btn-outline-primary">Bootstrap</button>
+                      <button class="btn btn-outline-primary">ReactJs</button>
+                      <button class="btn btn-outline-primary">AngulerJs</button>
+                      <button class="btn btn-outline-primary">VueJs</button>
+                      <button class="btn btn-outline-primary">Python</button>
+                      <button class="btn btn-outline-primary">C</button>
+                      <button class="btn btn-outline-primary">C++</button>
+                      <button class="btn btn-outline-primary">Java</button>
+                      <button class="btn btn-outline-primary">Django</button>
+                      <button class="btn btn-outline-primary">flask</button>
+                      <button class="btn btn-outline-primary">Web Design</button>
+                      <button class="btn btn-outline-primary">Photshop</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+                <button type="button" class="btn btn-primary btn_save">SAVE </button>
+              </div>
+            </div>
+          </div>
+        </div>
     <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
