@@ -83,9 +83,9 @@ section .contentBx .formBx .inputBx span {
     letter-spacing: 1px;
 }
 
-section .contentBx .formBx .inputBx input {
+section .contentBx .formBx .inputBx input,select {
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 20px !important;
     outline: none;
     font-weight: 400;
     border: 1px solid #607d8b;
@@ -93,7 +93,7 @@ section .contentBx .formBx .inputBx input {
     letter-spacing: 1px;
     color: #607d8b;
     background: transparent;
-    border-radius: 30px;
+    border-radius: 30px !important;
 }
 
 section .contentBx .formBx .inputBx input[type="submit"] {

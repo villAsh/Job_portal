@@ -49,7 +49,7 @@
           </ul>
         </div>
         <a href="./login.html">
-          <button class="btn btn-sign-up text-dark ms-3" type="button">
+          <button class="btn btn-login text-dark ms-3" type="button">
             Login
           </button>
         </a>
@@ -57,12 +57,12 @@
       </div>
     </div>
   </nav>
-<section>
+<section class="p-5">
   <div class="imgBx">
     <img src="./images/login_img.jfif" alt="">
   </div>
 
-  <div class="contentBx">
+  <div class="contentBx mt-5">
     <div class="formBx">
       <h2>Login</h2>
       <form action="">
@@ -76,7 +76,17 @@
           <span>Password</span>
           <input type="password" name="password" required >
         </div>
-
+        <div class="inputBx">  
+          <div>
+            <span>Login As</span>
+            <select name="login_as" class="form-select" id="login_as">
+              <option value="login as">select login</option>
+              <option value="admin">ADMIN</option>
+              <option value="jobseeker">Job Seeker</option>
+              <option value="recruiter">Recruiter</option>
+            </select>
+          </div>
+        </div>
         <div class="remember">
           <label for=""><input type="checkbox"> Remember me</label>
         </div>
@@ -84,7 +94,6 @@
         <div class="inputBx">
           <input type="submit" value="Sign in" required>
         </div>
-
         <div class="inputBx">
           <p>
             Don't have an account? <a href="./registration.html">Sign up</a>
@@ -94,10 +103,10 @@
 
       <h3>
         Login with social media
-        <ul class="sci">
-          <li class="facebook"><img src="./images/facebook-circle-logo-24.png" alt=""></li>
-          <li class="instagram"><img src="./images/instagram-logo-24.png" alt=""></li>
-          <li class="twitter"><img src="./images/bxl-twitter.svg" alt=""></li>
+        <ul class="sci mt-3">
+          <li class="facebook"><img src="./images/login_fb.png" alt="login with facebook"></li>
+          <li class="instagram"><img src="./images/login_insta.png" alt="login with instagram"></li>
+          <li class="twitter"><img src="./images/bxl-twitter.svg" alt="login with twitter"></li>
         </ul>
       </h3>
     </div>
@@ -233,7 +242,7 @@
 
 </footer>
 
-  <script src="./bootstrap-5.0.2-dist/js/bootstrap.js">
+  <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js">
   </script>
 </body>
 
