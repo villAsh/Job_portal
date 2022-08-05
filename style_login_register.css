@@ -72,6 +72,7 @@ section .contentBx .formBx h2 {
 
 section .contentBx .formBx .inputBx {
     margin-bottom: 20px;
+    
 }
 
 section .contentBx .formBx .inputBx span {
@@ -81,6 +82,7 @@ section .contentBx .formBx .inputBx span {
     color: #607d8b;
     font-weight: 300;
     letter-spacing: 1px;
+    
 }
 
 section .contentBx .formBx .inputBx input,select {

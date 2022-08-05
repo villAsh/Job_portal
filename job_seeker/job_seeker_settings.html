@@ -1,435 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetHire: user profile</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
-    <style>
-        .profile_img{
-            position: relative;
-            z-index: 1;
-        }
-        .camera{
-            position: absolute;
-            top: 5%;
-            left: 7%;
-            z-index: 2;
-            background-color: white;
-            padding: 8px;
-            border-radius: 28px;
-        } 
-        .camera:hover{
-            transform: scale(1.1);
-            transition: ease-in-out 0.2s;
-        }  
-        .user_name{
-            position: relative;
-        }
-        .fa-pen{
-            position: absolute;
-            bottom: 60%;
-            margin-left: 6px;
-        }
-        #basic_details h6{
-          font-size: 16px !important;
-          font-weight: 500 !important;
-        }
-        #update_column .edu h5{
-          font-size: 1.2rem !important;
-          color: var(--gray);
-          padding: 5px 0; 
-        }
-        #update_column h2{
-          font-weight: 700;
-          font-size: 1.9rem;
-        }
-        #update_column h5{
-          color: var(--black);
-          padding: 10px 0;
-          cursor: pointer;
-        }
-        #update_column p{
-          font-size: 0.8;
-        }
-        #update_column a{
-          font-size: 1rem;
-          font-weight: 600;
-          text-decoration: none;
-          float: right;
-        }
-      
-      
-        #update_column .col-md-3,
-        .col-md-8{
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        }
-        #update_column #accom p{
-          margin-top: -10px;
-          font-size: 0.8rem;
-        }
-        #edu_modal h5{
-          color: var(--black);
-        }
-        #edu_modal label{
-          color: gray;
-        }
-        #skill_modal button{
-          margin: 5px 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GetHire: user profile</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .profile_img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .camera {
+      position: absolute;
+      top: 5%;
+      left: 7%;
+      z-index: 2;
+      background-color: white;
+      padding: 8px;
+      border-radius: 28px;
+    }
+
+    .camera:hover {
+      transform: scale(1.1);
+      transition: ease-in-out 0.2s;
+    }
+
+    .user_name {
+      position: relative;
+    }
+
+    .fa-pen {
+      position: absolute;
+      bottom: 60%;
+      margin-left: 6px;
+    }
+
+    #basic_details h6 {
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+
+    #update_column .edu h5 {
+      font-size: 1.2rem !important;
+      color: var(--gray);
+      padding: 5px 0;
+    }
+
+    #update_column h2 {
+      font-weight: 700;
+      font-size: 1.9rem;
+    }
+
+    #update_column h5 {
+      color: var(--black);
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    #update_column p {
+      font-size: 0.8;
+    }
+
+    #update_column a {
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      float: right;
+    }
+
+
+    #update_column .col-md-3,
+    .col-md-8 {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    #update_column #accom p {
+      margin-top: -10px;
+      font-size: 0.8rem;
+    }
+
+     h5 {
+      color: var(--black);
+    }
+
+     label {
+      color: var(--black);
+      font-size: 1rem;
+    }
+
+    #skill_modal label {
+      margin: 5px 4px;
+    }
+  </style>
 </head>
+
 <body>
-    <section id="navbar">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/images/logo.svg"
-                alt="Brand Logo"> </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+  <section id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="/images/logo.svg" alt="Brand Logo"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
               navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="/main_page.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">about us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/find_jobs.html" target="_blank">find jobs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Blogs</a>
-                </li>
-              </ul>
-              <div class="dropdown ms-2">
-                  <img src="/images/profile_avatar" alt="profile_avatar" class="img-fluid " height="50px" width="50px">
-                <a href="#" role="button" class="text-decoration-none
-                  dropdown-toggle" id="dropd" data-bs-toggle="dropdown"
-                  aria-expanded="false">Vilas chavhan</a>
-                <ul class="dropdown-menu ms-4" aria-labelledby="dropd">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="#">saved jobs</a></li>
-                  <li><a class="dropdown-item" href="#">applied jobs</a></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
-                </ul>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./job_seeker_main_page.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">about us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/find_jobs.html" target="_blank">find jobs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Job Scam</a>
+            </li>
+          </ul>
+          <div class="dropdown ms-2">
+            <img src="/images/profile_avatar" alt="profile_avatar" class="img-fluid " height="50px" width="50px">
+            <a href="#" role="button" class="text-decoration-none
+                  dropdown-toggle" id="dropd" data-bs-toggle="dropdown" aria-expanded="false">Vilas chavhan</a>
+            <ul class="dropdown-menu ms-4" aria-labelledby="dropd">
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="#">saved jobs</a></li>
+              <li><a class="dropdown-item" href="#">applied jobs</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section id="basic_details" class="container-md container-fluid bg-light mt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-0 bg-light">
+          <div class="card-body p-3">
+            <div class="profile">
+              <img src="/images/profile_avatar" alt="avatar" class="profile_img img-fluid " height="100px"
+                width="100px">
+              <div class="camera">
+                <img src="/images/camera_avatar.png" alt="camera avatar" height="20px" width="20px">
+              </div>
+              &nbsp;
+              <h2 class="d-inline-block user_name">User Name</h2> <i class="fa fa-pen pb-5"></i>
+            </div>
+            <div class="details container pt-5">
+              <div class="row justify-content-start">
+                <div class="col-12 col-md-3">
+                  <div class=" email">
+                    <i class="fa fa-envelope"></i>
+                    <h6 class="ms-2 d-inline">userEmail@gmail.com</h6>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="contact">
+                    <i class="fa fa-phone"></i>
+                    <h6 class=" ms-2 d-inline">1234567890</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-start mt-2">
+                <div class="col-12 col-md-3">
+                  <div class="place">
+                    <i class="fa fa-location-pin"></i>
+                    <h6 class="ms-2 d-inline">Ahmadabad</h6>
+                  </div>
+                </div>
+                <div class="col-12 col-md-3">
+                  <div class="expi">
+                    <i class="fa fa-briefcase"></i>
+                    <h6 class="ms-2 d-inline">Fresher</h6>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </nav>
-      </section>
-      <section id="basic_details" class="container-md container-fluid bg-light mt-3">
-        <div class="row">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--                       update details                     -->
+  <section class="container-md container-fluid mt-5" id="update_column">
+    <div class="row justify-content-around">
+      <div class="col-12 col-md-3 p-4  bg-light">
+        <h2>Update</h2>
+        <hr>
+        <div>
+          <h5>Resume <a href="#">UPLOAD</a></h5>
+          <h5>Headline</h5>
+          <h5>Profile Summary</h5>
+          <h5>Education <a href="#" data-bs-toggle="modal" data-bs-target="#edu_modal">ADD</a></h5>
+          <h5>Skills <a href="#" data-bs-toggle="modal" data-bs-target="#skill_modal">ADD</a></h5>
+          <h5>Project <a href="#" data-bs-toggle="modal" data-bs-target="#pro_modal">ADD</a></h5>
+          <h5>Certifications <a href="#"  data-bs-toggle="modal" data-bs-target="#cert_modal">ADD</a></h5>
+          <h5>Accomplishments<a href="#" data-bs-toggle="modal" data-bs-target="#profile_modal">ADD</a></h5>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-8 p-3 bg-light mt-3 mt-md-0">
+        <h2 class="pt-2 ps-2">Resume</h2>
+        <p class="text-muted ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia deleniti,
+          voluptatibus sed eius deserunt possimus reprehenderit soluta delectus ipsum consectetur.</p>
+        <div class="upload_box ">
+          <form action="GET">
+            <input type="file">
+          </form>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
+        <h2 class="mt-3 ps-2 d-inline-block">Headline</h2> &nbsp; <i class="fa fa-pen-clip"></i>
+        <p class="text-muted ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis unde
+          voluptas maiores.</p>
+      </div>
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
+        <h2 class="mt-3 ps-2 d-inline-block">Profile Summary</h2><a href="#">
+          <h4>ADD EXPLOYEMENT</h4>
+        </a>
+        <p class="text-muted ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis unde
+          voluptas maiores.</p>
+      </div>
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
+        <h2 class="mt-2 ps-2 d-inline-block">Education</h2><a href="#" data-bs-toggle="modal"
+          data-bs-target="#edu_modal">
+          <h4>ADD EDUCATION</h4>
+        </a>
+        <div class="mt-2 ps-2 text-muted edu">
+          <h5>Add 10th</h5>
+          <h5>add 12th</h5>
+          <h5>add Graduation</h5>
+          <h5>Add Post-Graduation</h5>
+          <h5>Add Phd</h5>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
+        <h2 class="mt-2 p-2 d-inline-block">Skills</h2><a href="#" data-bs-toggle="modal" data-bs-target="#skill_modal">
+          <h4>ADD SKILLS</h4>
+        </a>
+        <div class="badge_div container-fluid">
+          <div class="row">
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">HTML</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">CSS</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">JavaScript</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Bootstrap</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Jquery</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">FrontEnd</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">C++</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Python</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Django</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Web Design</button>
+            </div>
+            <div class="col-3 col-md-2 mx-2 my-2">
+              <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Figma</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
+        <h2 class="mt-2 ps-2 d-inline-block">Project</h2><a href="#"  data-bs-toggle="modal" data-bs-target="#pro_modal">
+          <h4>ADD PROJECT</h4>
+        </a>
+        <p class="text-muted mt-4 ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quidem at,
+          reprehenderit architecto earum vel sunt perferendis ab ratione consequatur!</p>
+      </div>
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
+        <h2 class="mt-2 ps-2 d-inline-block">Certifications</h2><a href="#"  data-bs-toggle="modal" data-bs-target="#cert_modal">
+          <h4>ADD CERIFICATE</h4>
+        </a>
+        <p class="text-muted mt-4 ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quidem at,
+          reprehenderit architecto earum vel sunt perferendis ab ratione consequatur!</p>
+      </div>
+      <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4" id="accom">
+        <h2 class="mt-2 ps-2">Accomplishments</h2>
+        <div class="mt-4 ps-2 container">
+          <div class="row">
             <div class="col-12">
-                <div class="card border-0 bg-light">
-                    <div class="card-body p-3">
-                        <div class="profile">
-                            <img src="/images/profile_avatar" alt="avatar" class="profile_img img-fluid " height="100px" width="100px">
-                                <div class="camera">
-                                    <img src="/images/camera_avatar.png" alt="camera avatar" height="20px" width="20px" >
-                                </div>
-                                &nbsp;
-                               <h2 class="d-inline-block user_name">User Name</h2> <i class="fa fa-pen pb-5"></i>
-                        </div>
-                        <div class="details container pt-5">
-                            <div class="row justify-content-start">
-                                <div class="col-12 col-md-3">
-                                    <div class=" email">
-                                        <i class="fa fa-envelope"></i><h6 class="ms-2 d-inline">userEmail@gmail.com</h6>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-3">
-                                    <div class="contact">
-                                        <i class="fa fa-phone"></i><h6 class=" ms-2 d-inline">1234567890</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row justify-content-start mt-2">
-                              <div class="col-12 col-md-3">
-                                <div class="place">
-                                  <i class="fa fa-location-pin"></i><h6 class="ms-2 d-inline">Ahmadabad</h6>
-                                </div>
-                              </div>
-                              <div class="col-12 col-md-3">
-                                <div class="expi">
-                                  <i class="fa fa-briefcase"></i><h6 class="ms-2 d-inline">Fresher</h6>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <h5 class="fw-bolder d-inline-block">Online profiles</h5><a href="#" data-bs-target="#profile_modal" data-bs-toggle="modal">ADD</a>
+              <p class="text-muted">Add online profiles (e.g github,stackoverflow,leetcode)</p>
+              <hr>
             </div>
+          </div>
         </div>
-      </section>
-      <!--                       update details                     -->
-      <section class="container-md container-fluid mt-5" id="update_column">
-        <div class="row justify-content-around">
-          <div class="col-12 col-md-3 p-4  bg-light">
-            <h2>Update</h2>
-            <hr>
-            <div>
-              <h5>Resume  <a href="#">UPLOAD</a></h5>
-              <h5>Headline</h5>
-              <h5>Profile Summary</h5>
-              <h5>Education      <a href="#"  data-bs-toggle="modal" data-bs-target="#edu_modal">ADD</a></h5>
-              <h5>Skills         <a href="#"  data-bs-toggle="modal" data-bs-target="#skill_modal">ADD</a></h5>
-              <h5>Project        <a href="#">ADD</a></h5>
-              <h5>Certifications <a href="#">ADD</a></h5>
-              <h5>Accomplishments<a href="#">ADD</a></h5>
+      </div>
+    </div>
+  </section>
+  <!--                      EDUCATION DETAILS MODAL            -->
+  <div class="modal fade" id="edu_modal" tabindex="-1" aria-labelledby="edu_modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content p-3">
+        <div class="modal-body">
+          <h5>Add Education</h5>
+          <form action="POST">
+            <div class="mb-4">
+              <label for="education" class="form-label d-block">Education</label>
+              <select name="education-select" id="education" class="form-select" aria-label="select education">
+                <option value="choose education" selected>Select Education</option>
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="graduate">Graduate</option>
+                <option value="Post-Graduate">Post-Graduate</option>
+              </select>
             </div>
-          </div>
-          
-          <div class="col-12 col-md-8 p-3 bg-light mt-3 mt-md-0">
-            <h2 class="pt-2 ps-2">Resume</h2>
-            <p class="text-muted ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia deleniti, voluptatibus sed eius deserunt possimus reprehenderit soluta delectus ipsum consectetur.</p>
-            <div class="upload_box ">
-              <form action="GET" >
-                <input type="file" >
-              </form>
+            <div class="mb-4">
+              <label for="course" class="form-label d-block">Course</label>
+              <select name="course-select" id="course" class="form-select" aria-label="select course">
+                <option value="selection">Select Course</option>
+                <option value="BCA">BCA</option>
+                <option value="BCOM">BCOM</option>
+                <option value="BSC">BSC</option>
+                <option value="B-ARCH">B-ARCH</option>
+                <option value="BE">BE</option>
+                <option value="BTECH">BTECH</option>
+                <option value="MBA">BBA</option>
+                <option value="BA">BA</option>
+                <option value="BMM">BMM</option>
+
+              </select>
+
             </div>
-          </div>
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-3 ps-2 d-inline-block">Headline</h2> &nbsp; <i class="fa fa-pen-clip"></i>
-              <p class="text-muted ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis unde voluptas maiores.</p>
+            <div class="mb-4">
+              <label for="specializaton" class="form-label d-block"
+                aria-label="select specializaton">Specialization</label>
+              <select name="specializaton_select" class="form-select" id="specialization">
+                <option value="select " selected>select Specialization</option>
+                <option value="cs">Computer Science</option>
+                <option value="cse ">Computer science Engineering</option>
+                <option value="web">Web Developement</option>
+                <option value="ad">Android Developement </option>
+                <option value="ios">Ios Developement</option>
+                <option value="hr">Human Resource</option>
+              </select>
             </div>
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-3 ps-2 d-inline-block">Profile Summary</h2><a href="#"><h4>ADD EXPLOYEMENT</h4></a>
-              <p class="text-muted ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae veritatis unde voluptas maiores.</p>
+            <div class="mb-4">
+              <label for="university" class="form-label d-block"
+                aria-label="select university">University/Institute</label>
+              <select name="university_select" class="form-select" id="university">
+                <option value="select" selected>Select University</option>
+                <option value="gu">Gujarat Universtiy</option>
+                <option value="lpu">LPU</option>
+              </select>
+
             </div>
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-2 ps-2 d-inline-block">Education</h2><a href="#" data-bs-toggle="modal" data-bs-target="#edu_modal"><h4>ADD EDUCATION</h4></a>
-              <div class="mt-2 ps-2 text-muted edu">
-                <h5>Add 10th</h5>
-                <h5>add 12th</h5>
-                <h5>add Graduation</h5>
-                <h5>Add Post-Graduation</h5>
-                <h5>Add Phd</h5>
+            <div class="mb-4">
+              <label for="nothing" class="d-block mb-2">Course Type</label>
+              <div class="row ">
+                <div class="form-check col-12 col-md-4 ps-5">
+                  <input type="radio" class="form-check-input" name="fulltime" id="fulltime">
+                  <label for="fulltime" class="form-check-label">Full-Time</label>
+                </div>
+                <div class="form-check col-12 col-md-4">
+                  <input type="radio" class="form-check-input" name="partime" id="partime">
+                  <label for="fulltime" class="form-check-label">Part-Time</label>
+                </div>
+                <div class="form-check col-12 col-md-4">
+                  <input type="radio" class="form-check-input" name="dl" id="dl">
+                  <label for="dl" class="form-check-label">Distance Learning</label>
+                </div>
               </div>
             </div>
+            <div class="mb-4">
+              <label for="passingyear" class="form-label">Passing Year</label>
+              <select name="passingyear" id="passingyear" class="form-select">
+                <option value="selection" selected>Select Passing Year</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
 
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+          <button type="button" class="btn btn-primary btn_save">SAVE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--                      SKILLS MODAL                      -->
+  <div class="modal fade" id="skill_modal" tabindex="-1" aria-labelledby="skill_modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5>Add Skills</h5>
+          <div class="container">
+            <div class="row">
+              
+              <div class="d-flex flex-row justify-content-start align-items-center flex-wrap p-3">
+                <input type="checkbox" class="btn-check" id="html" autocomplete="off">
+                <label class="btn btn-outline-primary" for="html">HTML</label>
+                <input type="checkbox" class="btn-check" id="CSS" autocomplete="off">
+                <label class="btn btn-outline-primary" for="CSS">CSS</label><input
+                  type="checkbox" class="btn-check" id="js" autocomplete="off">
+                <label class="btn btn-outline-primary" for="js">JavaScript</label><input
+                  type="checkbox" class="btn-check" id="bt" autocomplete="off">
+                <label class="btn btn-outline-primary" for="bt">Bootstrap</label><input
+                  type="checkbox" class="btn-check" id="react" autocomplete="off">
+                <label class="btn btn-outline-primary" for="react">ReactJs</label><input
+                  type="checkbox" class="btn-check" id="angular" autocomplete="off">
+                <label class="btn btn-outline-primary" for="angular">angular</label><input
+                  type="checkbox" class="btn-check" id="vue" autocomplete="off">
+                <label class="btn btn-outline-primary" for="vue">VueJs</label><input
+                  type="checkbox" class="btn-check" id="python" autocomplete="off">
+                <label class="btn btn-outline-primary" for="python">Python</label><input
+                  type="checkbox" class="btn-check" id="cpp" autocomplete="off">
+                <label class="btn btn-outline-primary" for="cpp">C++</label><input
+                  type="checkbox" class="btn-check" id="c" autocomplete="off">
+                <label class="btn btn-outline-primary" for="c">C Language</label><input
+                  type="checkbox" class="btn-check" id="java" autocomplete="off">
+                <label class="btn btn-outline-primary" for="java">Java</label><input
+                  type="checkbox" class="btn-check" id="webdesign" autocomplete="off">
+                <label class="btn btn-outline-primary" for="webdesign">Web Desing</label><input
+                  type="checkbox" class="btn-check" id="photoshop" autocomplete="off">
+                <label class="btn btn-outline-primary" for="photoshop">Photoshop</label>
+                <input  type="checkbox" class="btn-check" id="django" autocomplete="off">
+                <label class="btn btn-outline-primary" for="django">Django</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+          <button type="button" class="btn btn-primary btn_save">SAVE </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--                      PROJECT MODAL                     -->
 
+  <div class="modal fade" id="pro_modal" tabindex="-1" aria-labelledby="pro_modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5 class="ms-4">Add Project</h5>
+          <form action="POST" class="m-4">
+            <div class="mb-4">
+              <label for="title" class="form-label d-block">Project Title</label>
+              <input type="text" class="form-control" placeholder="Enter Project Title">
+            </div>
+            <div class="row">
+              <label for="startdate" class="form-label">Start Date</label>
+              <div class="col-12 col-md-6">
       
-            
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-2 p-2 d-inline-block">Skills</h2><a href="#" data-bs-toggle="modal" data-bs-target="#skill_modal"><h4>ADD SKILLS</h4></a>
-               <div class="badge_div container-fluid">
-                <div class="row">
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">HTML</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">CSS</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">JavaScript</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Bootstrap</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Jquery</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">FrontEnd</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">C++</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Python</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Django</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Web Design</button>
-                  </div>
-                  <div class="col-3 col-md-2 mx-2 my-2">
-                    <button class="badge rounded-pill bg-primary px-4 py-2 border-0 " type="button">Figma</button>
-                  </div>
-                </div> 
-                </div>
-            </div>
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-2 ps-2 d-inline-block">Project</h2><a href="#"><h4>ADD PROJECT</h4></a>
-              <p class="text-muted mt-4 ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quidem at, reprehenderit architecto earum vel sunt perferendis ab ratione consequatur!</p>
-            </div>
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4">
-              <h2 class="mt-2 ps-2 d-inline-block">Certifications</h2><a href="#"><h4>ADD CERIFICATE</h4></a>
-              <p class="text-muted mt-4 ps-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quidem at, reprehenderit architecto earum vel sunt perferendis ab ratione consequatur!</p>
-            </div>
-            <div class="col-12 col-md-8 bg-light p-3 mt-4 ms-auto me-4" id="accom">
-              <h2 class="mt-2 ps-2">Accomplishments</h2>
-              <div class="mt-4 ps-2 container">
-                <div class="row">
-                  <div class="col-12">
-                    <h5 class="fw-bolder d-inline-block">Online profiles</h5><a href="#">ADD</a>
-                    <p class="text-muted">Add online profiles (e.g github,stackoverflow,leetcode)</p>
-                    <hr>
-                  </div>
-                </div>
+                <select name="month" id="startdate" class="form-select">
+                  <option value="Month">Month</option>
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="june">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">Octobar</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+
+                </select>
+              </div>
+              <div class="col-12 col-md-6 mt-3 mt-md-0">
+                <select name="year" id="year" class="form-select">
+                  <option value="selection" selected>Year</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                </select>
               </div>
             </div>
-        </div>
-      </section>
-                  <!--   EDUCATION DETAILS MODAL            -->
-      <div class="modal fade" id="edu_modal" tabindex="-1" aria-labelledby="edu_modal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content p-3">
-            <div class="modal-body">
-              <h5>Add Education</h5>
-              <form action="POST">
-               <div class="mb-4">
-                <label for="education" class="form-label d-block">Education</label>
-                <select name="education-select" id="education" class="form-select" aria-label="select education">
-                  <option value="choose education"  selected>Select Education</option>
-                  <option value="10th">10th</option>
-                  <option value="12th">12th</option>
-                  <option value="graduate">Graduate</option>
-                  <option value="Post-Graduate">Post-Graduate</option>
+            <div class="row mt-3 mb-4">
+              <label for="enddate" class="form-label">End Date</label>
+              <div class="col-12 col-md-6">
+                <select name="month" id="enddate" class="form-select">
+                  <option value="Month">Month</option>
+                  <option value="jan">January</option>
+                  <option value="feb">February</option>
+                  <option value="mar">March</option>
+                  <option value="apr">April</option>
+                  <option value="may">May</option>
+                  <option value="june">June</option>
+                  <option value="jul">July</option>
+                  <option value="aug">August</option>
+                  <option value="sep">September</option>
+                  <option value="oct">Octobar</option>
+                  <option value="nov">November</option>
+                  <option value="dec">December</option>
+
                 </select>
-               </div>
-               <div class="mb-4">
-                  <label for="course" class="form-label d-block">Course</label>
-                  <select name="course-select" id="course" class="form-select" aria-label="select course">
-                    <option value="selection">Select Course</option>
-                    <option value="BCA">BCA</option>
-                    <option value="BCOM">BCOM</option>
-                    <option value="BSC">BSC</option>
-                    <option value="B-ARCH">B-ARCH</option>
-                    <option value="BE">BE</option>
-                    <option value="BTECH">BTECH</option>
-                    <option value="MBA">BBA</option>
-                    <option value="BA">BA</option>
-                    <option value="BMM">BMM</option>
-                    
+              </div>
+              <div class="col-12 col-md-6 mt-3 mt-md-0">
+                <select name="year" id="endyear" class="form-select">
+                  <option value="selection" selected>Year</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="url" class="form-label">Project Url</label>
+              <input type="url" class="form-control" placeholder="Enter Project Url">
+            </div>
+            <div class="mb-4">
+              <label for="desc" class="form-label">Project Description</label>
+              <textarea class="form-control" id="desc" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+          <button type="button" class="btn btn-primary btn_save">SAVE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--                       CERTIFICATION MODAL              -->
+  <div class="modal fade" id="cert_modal" tabindex="-1" aria-labelledby="cert_modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5>Add Certificate</h5>
+          <form action="POST">
+            <div class="mb-4">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" id="name" class="form-control" placeholder="Ex: Front end web Developement">
+            </div>
+            <div class="mb-4">
+              <label for="org" class="form-label">Issuing Organization</label>
+              <input type="text" name="org" id="org" class="form-control" placeholder="Ex: Coursera">
+            </div>
+            <div class="mb-4">
+              <input type="checkbox" name="check1" id="check" class="form-check-inline ms-1">
+              <label for="check" class="form-label text-muted">This does not expired</label>
+            </div>
+            <div class="mb-4">
+              <div class="row">
+                <label for="issuedate" class="form-label">Issue Date</label>
+                <div class="col-12 col-md-6">
+                  <select name="month" id="issuedate" class="form-select">
+                    <option value="Month">Month</option>
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">Octobar</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+  
                   </select>
-                
-               </div>
-               <div class="mb-4">
-                <label for="specializaton" class="form-label d-block" aria-label="select specializaton">Specialization</label>
-                <select name="specializaton_select" class="form-select" id="specialization">
-                  <option value="select " selected>select Specialization</option>
-                  <option value="cs">Computer Science</option>
-                  <option value="cse ">Computer science Engineering</option>
-                  <option value="web">Web Developement</option>
-                  <option value="ad">Android Developement </option>
-                  <option value="ios">Ios Developement</option>
-                  <option value="hr">Human Resource</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label for="university" class="form-label d-block" aria-label="select university">University/Institute</label>
-                <select name="university_select" class="form-select" id="university">
-                  <option value="select" selected>Select University</option>
-                  <option value="gu">Gujarat Universtiy</option>
-                  <option value="lpu">LPU</option>
-                </select>
-
-              </div>
-              <div class="mb-4">
-                <label for="nothing" class="d-block mb-2">Course Type</label>
-                <div class="row ">
-                  <div class="form-check col-12 col-md-4 ps-5">
-                    <input type="radio" class="form-check-input" name="fulltime" id="fulltime">
-                    <label for="fulltime" class="form-check-label">Full-Time</label>
-                  </div>
-                  <div class="form-check col-12 col-md-4">
-                    <input type="radio" class="form-check-input" name="partime" id="partime">
-                    <label for="fulltime" class="form-check-label">Part-Time</label>
-                  </div>
-                  <div class="form-check col-12 col-md-4">
-                    <input type="radio" class="form-check-input" name="dl" id="dl">
-                    <label for="dl" class="form-check-label">Distance Learning</label>
-                  </div>
+                </div>
+                <div class="col-12 col-md-6 mt-3 mt-md-0">
+                  <select name="year" id="year" class="form-select">
+                    <option value="selection" selected>Year</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                  </select>
                 </div>
               </div>
-              <div class="mb-4">
-                <label for="passingyear" class="form-label">Passing Year</label>
-                <select name="passingyear" id="passingyear" class="form-select">
-                  <option value="selection" selected>Select Passing Year</option>
-                  <option value="2023" >2023</option>
-                  <option value="2022" >2022</option>
-                  <option value="2021" >2021</option>
-                  <option value="2020" >2020</option>
-                  <option value="2019" >2019</option>
-                  <option value="2018" >2018</option>
-                  <option value="2017" >2017</option>
-                  <option value="2016" >2016</option>
-                  <option value="2015" >2015</option>
-                  <option value="2014" >2014</option>
-                  <option value="2013" >2013</option>
-                  <option value="2012" >2012</option>
-                  <option value="2011" >2011</option>
-                  <option value="2010" >2010</option>
-                  <option value="2009" >2009</option>
-                  <option value="2008" >2008</option>
-                  <option value="2007" >2007</option>
-                  <option value="2006" >2006</option>
-                  <option value="2005" >2005</option>
-                  <option value="2004" >2004</option>
-                  <option value="2003" >2003</option>
-                  <option value="2002" >2002</option>
-                  <option value="2001" >2001</option>
-                  <option value="2000" >2000</option>
-
-                </select>
-              </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
-              <button type="button" class="btn btn-primary btn_save">SAVE</button>
-            </div>
-          </div>
-        </div>
-        </div>  
-
-        <div class="modal fade" id="skill_modal" tabindex="-1" aria-labelledby="skill_modal" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-body">
-                <div class="container">
-                  <div class="row">
-                    <div class="d-flex flex-row justify-content-start flex-wrap p-3">
-                      <button class="btn btn-outline-primary">HTML</button>
-                      <button class="btn btn-outline-primary">CSS</button>
-                      <button class="btn btn-outline-primary">JavaScript</button>
-                      <button class="btn btn-outline-primary">Jquery</button>
-                      <button class="btn btn-outline-primary">Bootstrap</button>
-                      <button class="btn btn-outline-primary">ReactJs</button>
-                      <button class="btn btn-outline-primary">AngulerJs</button>
-                      <button class="btn btn-outline-primary">VueJs</button>
-                      <button class="btn btn-outline-primary">Python</button>
-                      <button class="btn btn-outline-primary">C</button>
-                      <button class="btn btn-outline-primary">C++</button>
-                      <button class="btn btn-outline-primary">Java</button>
-                      <button class="btn btn-outline-primary">Django</button>
-                      <button class="btn btn-outline-primary">flask</button>
-                      <button class="btn btn-outline-primary">Web Design</button>
-                      <button class="btn btn-outline-primary">Photshop</button>
-                    </div>
-                  </div>
+              <div class="row mt-4">
+                <label for="expirationdate" class="form-label">Expiration Date</label>
+                <div class="col-12 col-md-6">
+                  <select name="month" id="expirationdate" class="form-select">
+                    <option value="Month">Month</option>
+                    <option value="jan">January</option>
+                    <option value="feb">February</option>
+                    <option value="mar">March</option>
+                    <option value="apr">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="jul">July</option>
+                    <option value="aug">August</option>
+                    <option value="sep">September</option>
+                    <option value="oct">Octobar</option>
+                    <option value="nov">November</option>
+                    <option value="dec">December</option>
+  
+                  </select>
+                </div>
+                <div class="col-12 col-md-6 mt-3 mt-md-0">
+                  <select name="year" id="year" class="form-select">
+                    <option value="selection" selected>Year</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                  </select>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
-                <button type="button" class="btn btn-primary btn_save">SAVE </button>
-              </div>
             </div>
-          </div>
+            <div class="mb-4">
+              <label for="id" class="form-label">Credential ID</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="mb-4">
+              <label for="url" class="form-label">Credential URL</label>
+              <input type="url" class="form-control">
+            </div>
+          </form>
         </div>
-    <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+          <button type="button" class="btn btn-primary btn_save">SAVE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--                        ONLINE PROFILE                  -->
+  <div class="modal fade" id="profile_modal" tabindex="-1" aria-labelledby="profile_modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form action="POST">
+            <h5>Add Online Profile</h5>
+            <div class="mb-4">
+              <label for="pro_name" class="form-label">Profile Name</label>
+              <input type="text" id="pro_name" class="form-control" placeholder="Online Profile Name">
+            </div>
+            <div class="mb-4">
+              <label for="pro_url" class="form-label">Profile URL</label>
+              <input type="url" id="pro_url" class="form-control" placeholder="Enter Profile Url">
+            </div>
+            <div class="mb-4">
+              <label for="pro_desc" class="form-label">Profile Description</label>
+              <textarea class="form-control" id="pro_desc" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn_cancel" data-bs-dismiss="modal">CANCEL</button>
+          <button type="button" class="btn btn-primary btn_save">SAVE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+  </script>
 </body>
+
 </html>

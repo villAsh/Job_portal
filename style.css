@@ -22,16 +22,10 @@ body{
     color: var(--black);
 }
 h1{
-    font-size: 3rem !important;
-    font-weight: 600 !important;
+    font-size: 2.5rem !important;
+    font-weight: 400 !important;
 }
-.txt-green{
-    color: var(--green);
-    font-size: 3.5rem;
-    border-bottom: 4px solid var(--green);
-    padding-top: 8px;
-    
-}
+
 h3{
     font-weight: 600;
 }
