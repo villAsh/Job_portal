@@ -99,9 +99,9 @@ h6{
     border: 1px solid var(--green);
     color: var(--green);
 }
-#main_section .btn_search:hover{
+#main_section .btn_search:hover,.btn-explore:hover{
     background-color: var(--green);
-    color: whitesmoke;
+    color: whitesmoke !important;
 }
 /****************JUMBOTRON SECTION***********/
 #Jumbotron_section{
