@@ -5,7 +5,7 @@ body{
     font-family: 'Roboto Slab',sans-serif !important;
 }
 *{
-    text-transform: capitalize !important;
+    text-transform: initial !important;
 }
 :root{
     --green:#00E572;
@@ -55,7 +55,7 @@ h6{
 }
 /****************NAVBAR*******************/
 .navbar{
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px rgba(55, 30, 30, 0.3);
 }
 .navbar .navbar-nav{
     margin-left: auto;
@@ -96,10 +96,13 @@ h6{
 #main_section .btn_search{
     font-size: 0.9rem;
     padding: 9px 22px;
+    margin-top: 30px;
     border: 1px solid var(--green);
     color: var(--green);
 }
-#main_section .btn_search:hover,.btn-explore:hover{
+#main_section .btn_search:hover,.btn-explore:hover,
+#about_us .btn_learn_more:hover
+{
     background-color: var(--green);
     color: whitesmoke !important;
 }
@@ -182,7 +185,7 @@ h6{
     margin: 40px auto !important;
 }
  #about_us .imgabout{
-    height: 50vh !important;
+    height: 70vh !important;
  }
  #about_us .check-p p{
     font-size: 14px;
@@ -191,8 +194,13 @@ h6{
 .fa-check{
     color: var(--green);
 }
+#about_us .btn_learn_more{
+    margin-top: 20px;
+    color: var(--green) !important;
+    border: 1px solid var(--green) !important;
+}
 /****************how section ***************/
-#how_section .fa{
+#how_section .fa, #counter_section .fa{
     color: rgba(0, 229, 114, 0.7);
 }
 /***************explore jobs************/
@@ -239,7 +247,7 @@ h6{
 }
 
  /***************FOOTER*********/
- footer h5{
+ #footer h5{
     color: white;
  }
  #footer p{
