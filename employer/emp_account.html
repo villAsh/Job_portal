@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetHire : My Account</title>
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+    <style>
+        .profile_col{
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #emp_profile img{
+            max-width: 6vw;
+            margin: 20px;
+        }
+        .setting_col{
+            margin: 0px 10px;
+        }
+        .setting_col li{
+            font-size: 1.4rem !important;
+            font-weight: 400;
+            padding: 10px 0px;
+        }
+       .nav-tabs .nav-link{
+            color: var(--black) !important;
+        }
+        .setting_col a:hover{
+            background-color: var(--green) !important;
+            color: white;
+        }
+        .nav-tabs .nav-link.active{
+            background-color: var(--green) !important;
+        }
+        .fa-eye{
+            color: var(--green);
+        }
+        .fa-pen{
+            color: blue;
+        }
+        .fa-trash-can{ 
+            color: red;
+        }
+        #manage_candidates img{
+            max-width: 100px;
+            height: 100px;
+            border-radius: 50% !important;
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body>
+       <!--      NAVBAR                     -->
+       <section id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../images/logo.svg"
+                alt="Brand Logo"> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+              navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../about_us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./findtalent.html" target="_blank">Find Talent</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./postjob.html">Post Job</a>
+                </li>
+              </ul>
+              <div class="dropdown">
+                  <img src="../images/profile_avatar" alt="profile_avatar" class="img-fluid " height="50px" width="50px">
+                <a href="#" role="button" class="text-decoration-none
+                  dropdown-toggle" id="dropd" data-bs-toggle="dropdown"
+                  aria-expanded="false">Employer Name</a>
+                <ul class="dropdown-menu" aria-labelledby="dropd">
+                  <li><a class="dropdown-item" href="#">profile</a></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <section class="container-fluid p-5 mt-5" id="emp_profile">
+        <div class="row">
+            <div class="col-12 col-md-3 d-flex flex-column profile_col me-4">
+                <div class="my-4">
+                    <img src="../images/emp_avatar.png" alt="emp avatar" class="img-fluid border-dark rounded">
+                    <h3 class="ms-3">Elan Mosk</h3>
+                </div>
+                <div class="setting_col">
+                    <ul class="nav nav-tabs flex-column">
+                        <li class="nav-item"><a href="#emp_profile_tab" class="nav-link active" data-bs-toggle="tab">Profile</a> </li>
+                        <li class="nav-item"><a href="#emp_new_tab" class="nav-link" data-bs-toggle="tab">Dashboard</a> </li>
+                        <li class="nav-item"><a href="#emp_post_job" class="nav-link" data-bs-toggle="tab">Post Job</a> </li>
+                        <li class="nav-item"><a href="#manage_job" class="nav-link" data-bs-toggle="tab">Manage Job</a> </li>
+                        <li class="nav-item"><a href="#manage_candidates" class="nav-link" data-bs-toggle="tab">Manage Candidates</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 profile_col p-5">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="emp_profile_tab">
+                        <h3>Basic Information</h3>
+                        <div class="img-box mt-5">
+                            <input type="file" name="img" id="img" placeholder="enter img">
+                        </div>
+                        <form action="POST">
+                            <div class="row">
+                                <div class="my-3 col-12 col-sm-6">
+                                    <label for="c_name" class="form-label">Company Name</label>
+                                    <input type="text" id="c_name" class="form-control" placeholder="Company Name">
+                                </div>
+                                <div class="my-3 col-12 col-sm-6">
+                                    <label for="c_mail" class="form-label">Company Email</label>
+                                    <input type="email" id="c_mail" class="form-control" placeholder="Company Email">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="my-2 col-12 col-sm-6">
+                                    <label for="emp_name" class="form-label">emp Name</label>
+                                    <input type="text" id="emp_name" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="my-2 col-12 col-sm-6">
+                                    <label for="emp_lname" class="form-label">emp last name</label>
+                                    <input type="text" id="emp_lname" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="my-2 col-12 col-sm-6">
+                                    <label for="sdate" class="form-label">Start Date</label>
+                                    <input type="date" id="sdate" class="form-control" >
+                                </div>
+                                <div class="my-2 col-12 col-sm-6">
+                                    <label for="edate" class="form-label">End Date</label>
+                                    <input type="date" id="edate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="my-2 col-12 col-sm-6">
+                                    <label for="desig" class="form-label">Designation</label>
+                                    <input type="text" id="desig" class="form-control" placeholder="Designation">
+                                </div>
+                                <div class="my-2 col-12 col-sm-6">
+                                    <label for="loc" class="form-label">Location</label>
+                                    <input class="form-control" list="loc_option" id="loc" placeholder="Location">
+                                    <datalist id="loc_option">
+                                        <option value="Ahmadabad">
+                                        <option value="Bangalore">
+                                        <option value="Delhi">
+                                        <option value="Mumbai">
+                                        <option value="Hyadrabad">
+                                        <option value="Gurgaon">
+                                        <option value="Pune">
+                                      </datalist>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="my-2 col-12">
+                                    <label for="c_url" class="form-label">Company Website</label>
+                                    <input type="url" id="c_url" class="form-control" >
+                                </div>
+                                <div class="my-2 col-12">
+                                    <label for="c_desc" class="form-label">Company Description</label>
+                                <textarea name="j_desc" id="c_desc" rows="4" class="form-control" required></textarea>
+                                </div>
+                            </div>
+                            <div class="float-end">
+                                <button class="mt-3 btn btn_save" type="button">Save</button>
+                              </div>
+                        </form>
+                    </div>
+                     <div class="tab-pane" id="emp_post_job">
+                        <h3>Basic Information</h3>
+                        <div class="img-box mt-5">
+                            <input type="file" name="img" id="img" placeholder="enter img">
+                        </div>
+                        <form action="POST">
+                            <div class="mb-4">
+                                <label for="jtitle" class="form-label">Job Title</label>
+                            <input type="text" name="jtitle" id="jtitle" class="form-control" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="jdesc" class="form-label">Job Description</label>
+                                <textarea name="jdesc" id="jdesc" rows="4" class="form-control" required></textarea>
+                            </div>
+                            <div class="mb-4 row">
+                                <div class="col-12 col-sm-6">
+                                    <label for="jexpdate" class="form-label">Job Expire Date</label>
+                                    <input type="date" id="jexpdate" class="form-control" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="jtype" class="form-label">Job Type</label>
+                                    <select name="jobtype" id="jtype" class="form-select">
+                                        <option selected>select category</option>
+                                        <option value="wd">Web Developer</option>
+                                        <option value="bd">Business Developement</option>
+                                        <option value="des">Design</option>
+                                        <option value="cs">Customer Services</option>
+                                        <option value="sc">Sales</option>
+                                        <option value="mm">Marketing & Manegement</option>
+                                        <option value="hr">Human Resource</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-4 row">
+                                <div class="col-12 col-sm-6">
+                                    <label for="jexp" class="form-label">Job Experience</label>
+                                    <input type="text" id="jexp" class="form-control" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="jlocation" class="form-label">Job Location</label>
+                                    <input class="form-control" list="loc_option" id="jlocation" placeholder="Job Location">
+                                    <datalist id="loc_option">
+                                        <option value="Ahmadabad">
+                                        <option value="Bangalore">
+                                        <option value="Delhi">
+                                        <option value="Mumbai">
+                                        <option value="Hyadrabad">
+                                        <option value="Gurgaon">
+                                        <option value="Pune">
+                                      </datalist>
+                                </div>
+                            </div>
+                            <div class="mb-4 row">
+                                <div class="col-12 col-sm-6">
+                                    <label for="min_salary" class="form-label">Min Salary</label>
+                                    <input type="text" name="min_salary" id="min_salary" class="form-control">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="max_salary" class="form-label">Max Salary</label>
+                                    <input type="text" name="max_salary" id="max_salary" class="form-control">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="jskill" class="form-label">Job Skill</label>
+                                <input type="text" name="skill" id="jskill" class="form-control" required>
+                            </div>
+                        </form>
+                        <div class="float-end">
+                            <button class="mt-3 btn btn_upload" type="button">Post Job</button>
+                          </div>
+                    </div>
+                    <div class="tab-pane" id="manage_job">
+                        <h2>Manage Jobs</h2>
+                        <div class="mt-2 table-responsive">
+                            <table class="table table-bordered">
+                                <tbody class="align-middle">
+                                    <tr class="table-secondary">
+                                        <td >Job Title</td>
+                                        <td>Total Applicants</td>
+                                        <td>Status</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h4>Job 1</h4>
+                                            <p class="text-muted">Expire Date : 10/12/2022 <br>
+                                               Address : 99 wall street,California 
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <h4>24 Applications</h4>
+                                        </td>
+                                        <td>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h4>Job 2</h4>
+                                            <p class="text-muted">Expire Date : 10/12/2022 <br>
+                                               Address : 99 wall street,California 
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <h4>24 Applications</h4>
+                                        </td>
+                                        <td>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h4>Job 3</h4>
+                                            <p class="text-muted">Expire Date : 10/12/2022 <br>
+                                               Address : 99 wall street,California 
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <h4>24 Applications</h4>
+                                        </td>
+                                        <td>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h4>Job 4</h4>
+                                            <p class="text-muted">Expire Date : 10/12/2022 <br>
+                                               Address : 99 wall street,California 
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <h4>24 Applications</h4>
+                                        </td>
+                                        <td>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                           <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                             
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="manage_candidates">
+                        <h2>Manage Candidates</h2>
+                        <div class="mt-2 table-responsive">
+                            <table class="table table-bordered">
+                                <tbody class="align-middle">
+                                    <tr class="table-secondary">
+                                        <td>Candidate Name</td>
+                                        <td>Status</td>
+                                        <td>Action</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-inline-block">
+                                                <img src="../images/emp_mng_pro1.jpg" alt="profile 1" class="img-fluid img_pro ">
+                                            </div>
+                                            <div class="ms-3 d-inline-block">
+                                                <h3 class="mt-3">Jhon MaCk</h3>
+                                                <div class="text-muted">
+                                                    <i class="fa-solid fa-filter mx-2"></i>Information Technology
+                                                    <i class="fa-solid fa-location-dot mx-2"></i>Mumbai
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fa-solid fa-check me-2"></i>Applied
+                                        </td>
+                                        <td>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-inline-block">
+                                                <img src="../images/emp_mng_pro2.jpg" alt="profile 1" class="img-fluid img_pro ">
+                                            </div>
+                                            <div class="ms-3 d-inline-block">
+                                                <h3 class="mt-3">Navin Patel</h3>
+                                                <div class="text-muted">
+                                                    <i class="fa-solid fa-filter mx-2"></i>Business
+                                                    <i class="fa-solid fa-location-dot mx-2"></i>Ahmadabad
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fa-solid fa-check me-2"></i>Applied
+                                        </td>
+                                        <td>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-inline-block">
+                                                <img src="../images/emp_mng_pro3.jpg" alt="profile 1" class="img-fluid img_pro ">
+                                            </div>
+                                            <div class="ms-3 d-inline-block">
+                                                <h3 class="mt-3">pooja Patel</h3>
+                                                <div class="text-muted">
+                                                    <i class="fa-solid fa-filter mx-2"></i>Marketing
+                                                    <i class="fa-solid fa-location-dot mx-2"></i>Mumbai
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fa-solid fa-check me-2"></i>Applied
+                                        </td>
+                                        <td>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-inline-block">
+                                                <img src="../images/emp_mng_pro1.jpg" alt="profile 1" class="img-fluid img_pro ">
+                                            </div>
+                                            <div class="ms-3 d-inline-block">
+                                                <h3 class="mt-3">Jhon MaCk</h3>
+                                                <div class="text-muted">
+                                                    <i class="fa-solid fa-filter mx-2"></i>Information Technology
+                                                    <i class="fa-solid fa-location-dot mx-2"></i>Mumbai
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fa-solid fa-check me-2"></i>Applied
+                                        </td>
+                                        <td>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="View"> <i class="fa-solid fa-eye" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Edit"> <i class="fa-solid fa-pen" ></i></button>
+                                            <button class="btn" type="button" data-bs-toggle="tooltip"  data-bs-placement="top" title="Delete"> <i class="fa-solid fa-trash-can" ></i></button>
+                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <script src="../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

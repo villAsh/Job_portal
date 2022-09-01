@@ -54,20 +54,20 @@ h6{
     border-radius: 7px;
 }
 /****************NAVBAR*******************/
-.navbar{
+#navbar .navbar{
     box-shadow: 1px 1px 3px rgba(55, 30, 30, 0.3);
 }
-.navbar .navbar-nav{
+#navbar .navbar .navbar-nav{
     margin-left: auto;
 }
-.navbar .navbar-nav .nav-link ,.btn-sign-up{
+#navbar .navbar .navbar-nav .nav-link ,.btn-sign-up{
     font-size: 1.1rem !important;
     font-weight: 400;
     color: var(--black) !important;
     margin-right: 7px;
 }
-.active,
- .nav-link:hover{
+#navbar .active,
+#navbar .nav-link:hover{
     color: var(--green) !important;
     border-bottom: 2px solid var(--green);
     margin-top: -6px;
@@ -95,13 +95,15 @@ h6{
 /*********/
 #main_section .btn_search{
     font-size: 0.9rem;
+    font-weight: 600;
     padding: 9px 22px;
     margin-top: 30px;
     border: 1px solid var(--green);
     color: var(--green);
 }
 #main_section .btn_search:hover,.btn-explore:hover,
-#about_us .btn_learn_more:hover
+#about_us .btn_learn_more:hover, #post_job .btn_upload:hover,
+#emp_profile .btn_save:hover
 {
     background-color: var(--green);
     color: whitesmoke !important;
