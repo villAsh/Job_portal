@@ -12,15 +12,6 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
     referrerpolicy="no-referrer" />
     <style>
-        #ft_search{
-            background: url("../images/search_jobs_bg.jpg") center center;
-            background-size: cover;
-            max-width: 100%;
-            height: 50vh;
-            z-index: -1;
-            filter: brightness(0.3);
-        }
-
     </style>
 </head>
 <body>
@@ -57,7 +48,7 @@
                   dropdown-toggle" id="dropd" data-bs-toggle="dropdown"
                   aria-expanded="false">Employer Name</a>
                 <ul class="dropdown-menu" aria-labelledby="dropd">
-                  <li><a class="dropdown-item" href="#">profile</a></li>
+                  <li><a class="dropdown-item" href="./emp_account.html">profile</a></li>
                   <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
               </div>
@@ -65,21 +56,194 @@
           </div>
         </nav>
       </section>
-      <section class="container-fluid ">
-        <div  id="ft_search">
-
-        </div>
-        <div class="d-flex justify-content-center">
-            <div class="position-absolute">
+      <section class="container-fluid  bg-light" id="ft_bg">
+        <div class="d-flex flex-column justify-content-center align-items-center p-3">
                 <h1>Find best talent for you</h1>
+                <h5>Search people for you</h5>
+        </div>
+        <div class="row  d-flex justify-content-center mt-5" id="ft_findtalent">
+          <div class="col-12 col-md-5">
+            <div class="p-1 px-2 bg-light rounded-3 input-group">
+                <img src="../images/find_jobs_search_icon.svg" alt="search logo" class="input-group-text ">
+              <input type="text" id="js_name" class="form-control" placeholder="Enter User Name">
             </div>
-            <div class="mt-4">
-                
+            <div class="p-1 px-2 bg-light rounded-3 my-4 input-group">
+                <img src="../images/find_jobs_search_icon.svg" alt="search logo" class="input-group-text">
+              <input type="text" id="js_city " class="form-control" placeholder="Enter City">
             </div>
+            <div class="d-flex justify-content-end mb-4">
+              <button class="btn btn_ft">Search</button>
+            </div>
+          </div>
         </div>
       
       </section>
-
+      <!--           FILTER                       -->
+      <section class="container-fluid mt-5" id="ft_format">
+        <!--    accordion                     -->
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <h6 class="ms-2 p-2">Filters <i class="fa-solid fa-filter"></i></h6>
+            <div class="accordion accordion-flush" id="filter_accordion">
+              <!--            accordion-1            -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="exp_header">
+                  <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#exp_accordion" aria-controls="exp_accordion">Experience</button>
+                </h2>
+                <div id="exp_accordion" class="accordion-collapse collapse  md-show" data-parent="filter_accordion">
+                  <div class="accordion-body">
+                    <input type="checkbox" id="fresher">
+                    <label for="fresher">Fresher</label><br>
+                    <input type="checkbox" id="yearOne">
+                    <label for="yearOne">1 years</label><br>
+                    <input type="checkbox" id="yearTwo">
+                    <label for="yearTwo">2 years</label><br>
+                    <input type="checkbox" id="yearThree">
+                    <label for="frehser">3 years</label><br>
+                    <input type="checkbox" id="yearFour">
+                    <label for="yearFour">4 years</label><br>
+                    <input type="checkbox" id="fivePlus">
+                    <label for="fivePlus">5+ years</label>
+                  </div>
+                </div>
+              </div>
+              <!--              accordion-2            -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="role_header">
+                  <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#role_accordion" aria-controls="role_accordion">Role Category</button>
+                </h2>
+                <div class="accordion-collapse collapse  md-show" id="role_accordion" data-parent="filter_accordion">
+                  <div class="accordion-body">
+                    <input type="checkbox" id="softdev">
+                    <label for="softdev">Software Developer</label><br>
+                    <input type="checkbox" id="BD">
+                    <label for="BD">Bussiness Developement</label><br>
+                    <input type="checkbox" id="design">
+                    <label for="design">Design</label><br>
+                    <input type="checkbox" id="sc">
+                    <label for="sc">sales & communication</label><br>
+                    <input type="checkbox" id="cs">
+                    <label for="cs">Customer Services</label><br>
+                    <input type="checkbox" id="mm">
+                    <label for="mm">Marketing & management</label><br>
+                    <input type="checkbox" id="hr">
+                    <label for="hr">Human resource</label><br>
+                    <input type="checkbox" id="pm">
+                    <label for="pm">Project management</label>
+                  </div>
+                </div>
+              </div>
+              <!--             accordion-3                -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="edu_header">
+                  <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#edu_accordion">Education</button>
+                </h2>
+                <div class="accordion-collapse collapse  md-show" id="edu_accordion" data-parent="filter_accordion">
+                  <div class="accordion-body">
+                    <input type="checkbox" id="any">
+                    <label for="any">Any Graduate</label><br>
+                    <input type="checkbox" id="bca">
+                    <label for="bca">BCA</label><br>
+                    <input type="checkbox" id="mca">
+                    <label for="mca">MCA</label><br>
+                    <input type="checkbox" id="be">
+                    <label for="be">BE</label><br>
+                    <input type="checkbox" id="btech">
+                    <label for="btech">BTech(CS)</label><br>
+                    <input type="checkbox" id="bba">
+                    <label for="bba">BBA</label><br>
+                    <input type="checkbox" id="mba">
+                    <label for="mba">MBA/PGDM</label><br>
+                    <input type="checkbox" id="bsc">
+                    <label for="bsc">BSC</label><br>
+                    <input type="checkbox" id="msc">
+                    <label for="msc">MSC</label><br>
+                    <input type="checkbox" id="bms">
+                    <label for="bms">BMS</label><br>
+                  </div>
+                </div>
+              </div>
+              <!--          accrodion-4                -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="city_header">
+                  <button class="accordion-button text-dark" data-bs-toggle="collapse"
+                    data-bs-target="#city_accordion">City</button>
+                </h2>
+                <div class="accordion-collapse collapse md-show" id="city_accordion" data-parent="filter_accordion">
+                  <div class="accordion-body">
+                    <input type="checkbox" id="amd">
+                    <label for="amd">Ahmadabad</label><br>
+                    <input type="checkbox" id="bng">
+                    <label for="bng">Bangalore</label><br>
+                    <input type="checkbox" id="hyd">
+                    <label for="hyd">Hyderabad</label><br>
+                    <input type="checkbox" id="chn">
+                    <label for="chn">Chennai</label><br>
+                    <input type="checkbox" id="pun">
+                    <label for="pun">Pune</label><br>
+                    <input type="checkbox" id="bmb">
+                    <label for="bmb">Mumbai</label><br>
+                    <input type="checkbox" id="del">
+                    <label for="del">Delhi</label><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-9">
+            <div class="text-center">
+              <h2>Recent Searches</h2>
+            </div>
+            <div class="row">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="d-flex flex-row justify-content-start">
+                    <div class="me-5">
+                      <img src="../images/emp_mng_pro1.jpg" alt="profile img 1" class="rounded-pill">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between">
+                      <h4>User Name</h4>
+                      <h6>Headline</h6>
+                      <h6>Location</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="d-flex flex-row justify-content-start">
+                    <div class="me-5">
+                      <img src="../images/emp_mng_pro1.jpg" alt="profile img 1" class="rounded-pill">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between">
+                      <h4>User Name</h4>
+                      <h6>Headline</h6>
+                      <h6>Location</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="d-flex flex-row justify-content-start">
+                    <div class="me-5">
+                      <img src="../images/emp_mng_pro1.jpg" alt="profile img 1" class="rounded-pill">
+                    </div>
+                    <div class="d-flex flex-column justify-content-between">
+                      <h4>User Name</h4>
+                      <h6>Headline</h6>
+                      <h6>Location</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
     <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
