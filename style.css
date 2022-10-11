@@ -596,4 +596,12 @@ span {
 	border: 2px solid var(--green);
 	background-color: white;
 }
-
+ #js_profile_modal .modal-body{
+	padding: 0 !important;
+	margin: 0 !important;
+	height: 100% !important;
+ }
+#js_profile_modal .js_profile_img {
+	border-radius: 100%;
+	border: 5px solid white;
+}

@@ -10,7 +10,7 @@ h5{
 h3{
     font-size: 1.5rem;
 }
-section {
+#main_sec {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -19,13 +19,13 @@ section {
     margin-bottom: 90px;
 }
 
-section .imgBx {
+#main_sec .imgBx {
     position: relative;
     width: 50%;
     height: 100%;
 }
 
-section .imgBx::before {
+#main_sec .imgBx::before {
     content: '';
     position: absolute;
     top: 0;
@@ -37,7 +37,7 @@ section .imgBx::before {
     mix-blend-mode: screen;
 }
 
-section .imgBx img {
+#main_sec .imgBx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,7 +47,7 @@ section .imgBx img {
 
 }
 
-section .contentBx {
+#main_sec .contentBx {
     display: flex;
     width: 50%;
     height: 100%;
@@ -55,11 +55,11 @@ section .contentBx {
     align-items: center;
 }
 
-section .contentBx .formBx {
+#main_sec .contentBx .formBx {
     width: 50%;
 }
 
-section .contentBx .formBx h2 {
+#main_sec .contentBx .formBx h2 {
     color: #607d8b;
     font-weight: 600;
     font-size: 1.5em;
@@ -70,12 +70,12 @@ section .contentBx .formBx h2 {
     letter-spacing: 1px;
 }
 
-section .contentBx .formBx .inputBx {
+#main_sec .contentBx .formBx .inputBx {
     margin-bottom: 20px;
     
 }
 
-section .contentBx .formBx .inputBx span {
+#main_sec .contentBx .formBx .inputBx span {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -85,7 +85,7 @@ section .contentBx .formBx .inputBx span {
     
 }
 
-section .contentBx .formBx .inputBx input,select {
+#main_sec .contentBx .formBx .inputBx input,select {
     width: 100%;
     padding: 10px 20px !important;
     outline: none;
@@ -98,7 +98,7 @@ section .contentBx .formBx .inputBx input,select {
     border-radius: 30px !important;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"] {
+#main_sec .contentBx .formBx .inputBx input[type="submit"] {
     background: #00e572;
     color: #fff;
     outline: none;
@@ -107,39 +107,39 @@ section .contentBx .formBx .inputBx input[type="submit"] {
     cursor: pointer;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"]:hover {
+#main_sec .contentBx .formBx .inputBx input[type="submit"]:hover {
     background: #00cc65;
 }
 
-section .contentBx .formBx .remember {
+#main_sec .contentBx .formBx .remember {
     margin-bottom: 10px;
     color: #607d8b;
     font-weight: 400;
     font-size: 14px;
 }
 
-section .contentBx .formBx .inputBx p {
+#main_sec .contentBx .formBx .inputBx p {
     color: #607d8b;
 }
 
-section .contentBx .formBx .inputBx p a {
+#main_sec .contentBx .formBx .inputBx p a {
     color: #00e572
 }
 
-section .contentBx .formBx h3 {
+#main_sec .contentBx .formBx h3 {
     color: #607d8b;
     text-align: center;
     margin: 80px 0 10px;
     font-weight: 500;
 }
 
-section .contentBx .formBx .sci{
+#main_sec .contentBx .formBx .sci{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-section .contentBx .formBx .sci li {
+#main_sec .contentBx .formBx .sci li {
     list-style: none;
     width: 50px;
     height: 50px;
@@ -152,25 +152,25 @@ section .contentBx .formBx .sci li {
     cursor: pointer;
 }
 
-section .contentBx .formBx .facebook:hover {
+#main_sec .contentBx .formBx .facebook:hover {
     background: #3b5998;
 }
 
-section .contentBx .formBx .instagram:hover {
+#main_sec .contentBx .formBx .instagram:hover {
     background: #C13584;
 }
 
-section .contentBx .formBx .twitter:hover {
+#main_sec .contentBx .formBx .twitter:hover {
     background: #1DA1F2;
 }
 
-section .contentBx .formBx .sci li img {
+#main_sec .contentBx .formBx .sci li img {
     transform: scale(0.8);
     filter: invert(10);
 }
 
 @media (max-width: 768px) {
-    section .imgBx {
+    #main_sec .imgBx {
         position: absolute;
         top: 0;
         left: 0;
@@ -178,7 +178,7 @@ section .contentBx .formBx .sci li img {
         height: 120%;
     }
 
-    section .contentBx {
+    #main_sec .contentBx {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -188,7 +188,7 @@ section .contentBx .formBx .sci li img {
 
     }
 
-    section .contentBx .formBx {
+    #main_sec .contentBx .formBx {
         width: 100%;
         padding: 20px;
         background: rgb(255 255 255 / 0.9);
@@ -196,7 +196,7 @@ section .contentBx .formBx .sci li img {
         margin-top: 100px;
     }
 
-    section .contentBx .formBx h3 {
+    #main_sec .contentBx .formBx h3 {
         color: #607d8b;
         text-align: center;
         margin: 20px 10px;

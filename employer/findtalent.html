@@ -198,35 +198,35 @@
               <h2>Recent Searches</h2>
             </div>
             <div class="row">
-              <div class="card mb-4">
+              <div class="card mb-4" data-bs-toggle="modal" data-bs-target="#js_profile_modal">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-start">
                     <div class="me-5">
                       <img src="../images/emp_mng_pro1.jpg" alt="profile img 1" class="rounded-pill">
                     </div>
                     <div class="d-flex flex-column justify-content-between">
-                      <h4>User Name</h4>
-                      <h6>Headline</h6>
-                      <h6>Location</h6>
+                      <h4>Pravin Patel</h4>
+                      <h6 class="text-muted">HTML | CSS | JS | FrontEnd Web Developer</h6>
+                      <h6 class="text-muted">Ahmedebad</h6>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card mb-4">
+              <div class="card mb-4"  data-bs-toggle="modal" data-bs-target="#js_profile_modal">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-start">
                     <div class="me-5">
                       <img src="../images/emp_mng_pro1.jpg" alt="profile img 1" class="rounded-pill">
                     </div>
                     <div class="d-flex flex-column justify-content-between">
-                      <h4>User Name</h4>
-                      <h6>Headline</h6>
-                      <h6>Location</h6>
+                      <h4>navin panchal</h4>
+                      <h6 class="text-muted">Python developer , Django Developer</h6>
+                      <h6 class="text-muted">Surat</h6>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card mb-4">
+              <div class="card mb-4"  data-bs-toggle="modal" data-bs-target="#js_profile_modal">
                 <div class="card-body">
                   <div class="d-flex flex-row justify-content-start">
                     <div class="me-5">
@@ -234,8 +234,8 @@
                     </div>
                     <div class="d-flex flex-column justify-content-between">
                       <h4>User Name</h4>
-                      <h6>Headline</h6>
-                      <h6>Location</h6>
+                      <h6 class="text-muted">Headline</h6>
+                      <h6 class="text-muted">Location</h6>
                     </div>
                   </div>
                 </div>
@@ -245,7 +245,110 @@
         </div>
       </section>
 
-
+<!--             MODALS                                                     -->
+      <div class="modal fade " id="js_profile_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="js_profile_modal">
+                <div class="js_profile_div p-3">
+                  <img src="../images/emp_mng_pro1.jpg" alt="profile img" class="js_profile_img" height="200px" width="250px">
+                  <div class="d-flex flex-column justify-content-start mt-4">
+                    <h1 class="text-start">Pravin Patel</h1>
+                    <h5 class="mt-3">HTML | CSS | JS | FrontEnd Web Developer | Web Designer</h5>
+                    <h6 class="text-muted mt-3">Ahmadabad,Gujarat,India</h6>
+                  </div>
+                </div>
+                <div class="js_profile_summary mt-3">
+                  <div class="d-flex flex-column p-3">
+                    <h1 class="text-start">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ducimus animi deleniti? Culpa deserunt eaque ipsam cum corporis rerum, maxime minima numquam vel. Architecto, consequatur! Atque fugiat eveniet aliquid nostrum eos ea voluptates adipisci iure, reiciendis dolores saepe. Quidem, laborum itaque. Omnis voluptates repellendus expedita rerum culpa praesentium neque dolores?</p>
+                  </div>
+                </div>
+                <div class="js_profile_education mt-3 ">
+                  <div class="d-flex flex-column p-3">
+                    <h1 class="text-start">Education</h1>
+                    <div class="d-inline-flex flex-row mt-3">
+                      <i class="fa fa-ribbon fa-2x me-4 mt-3"></i>
+                      <div class="d-flex flex-column">
+                        <h5>Lokmany College of Computer Application</h5>
+                        <h6>Master's of Computer Application</h6>
+                        <h6 class="text-muted">20 jun 2023 - 20 april 2025</h6>
+                      </div>
+                      </div>
+                      <hr> 
+                      <div class="d-inline-flex flex-row mt-3">
+                        <i class="fa fa-ribbon fa-2x me-4 mt-3"></i>
+                        <div class="d-flex flex-column">
+                          <h5>Lokmany College of Computer Application</h5>
+                          <h6>Bachelor's of Computer Application</h6>
+                          <h6 class="text-muted">20 jun 2020 - 20 april 2023</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="js_profile_skills mt-3 bg-light">
+                    <div class="d-flex flex-column p-3">
+                      <h1 class="text-start">Skills</h1>
+                      <div class="d-inline-flex flex-row flex-wrap justify-content-start align-items-center mt-4">
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">HTML</button>
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">CSS</button>
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">JavaScript</button>
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">C++</button>
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">Python</button>
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">Django</button>
+                        <button class="badge rounded-pill bg-primary px-4 py-2 my-2 mx-4 border-0 " type="button">Tailwind</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="js_profile_certi mt-3 bg-light">
+                    <div class="d-flex flex-column p-3">
+                      <h1 class="text-start">Certifications</h1>
+                      <div class="d-inline-flex flex-row mt-3">
+                        <i class="fa-solid fa-award fa-3x me-4 mt-3"></i>
+                        <div class="d-inline-flex flex-column">
+                          <h5 class="name_of_certi">Animation With JavaScript</h5>
+                          <h6 class="Platform">Coursera</h6>
+                          <h6 class="issued_date text-muted">20 jun 2022 - No expiration date</h6>
+                          <h6 class="credential_id text-muted">credential Id 23JEWVW33E</h6>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="d-inline-flex flex-row mt-3">
+                        <i class="fa-solid fa-award fa-3x me-4 mt-3"></i>
+                        <div class="d-inline-flex flex-column">
+                          <h5 class="name_of_certi">Advanced JavaScript</h5>
+                          <h6 class="Platform">Coursera</h6>
+                          <h6 class="issued_date text-muted">20 august 2022 - No expiration date</h6>
+                          <h6 class="credential_id text-muted">credential Id 23JEFEA33E</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="js_profile_project mt-3 bg-light">
+                    <div class="d-flex flex-column p-3">
+                      <h1 class="text-start">Projects</h1>
+                      <div class="d-inline-flex flex-column mt-3">
+                        <h5 class="Project_name">Sorting Visualizer</h5>
+                        <h6 class="project_Duration text-muted">10 jun 2022 - 10 july 2022</h6>
+                        <p class="project_description text-start">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro dignissimos doloribus molestias autem sed magnam. Enim dolorum inventore, culpa, sunt accusamus deserunt odio pariatur eligendi, tempore necessitatibus deleniti quo corrupti!
+                        </p>
+                        <a href="#" class="project_Url text-decoration-none text-black-50 p-3 border border-dark border-2 text-center">Show Project</a>
+                      </div>
+                      <hr>
+                    </div>
+                  </div>
+                  <div class="js_profile_resume mt-3 bg-light">
+                    <div class="d-flex flex-column p-3">
+                      <h1 class="text-start">Download Resume</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     <script src="/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
