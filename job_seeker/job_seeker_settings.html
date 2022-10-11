@@ -11,94 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .profile_img {
-      position: relative;
-      z-index: 1;
-    }
-
-    .camera {
-      position: absolute;
-      top: 5%;
-      left: 7%;
-      z-index: 2;
-      background-color: white;
-      padding: 8px;
-      border-radius: 28px;
-    }
-
-    .camera:hover {
-      transform: scale(1.1);
-      transition: ease-in-out 0.2s;
-    }
-
-    .user_name {
-      position: relative;
-    }
-
-    .fa-pen {
-      position: absolute;
-      bottom: 60%;
-      margin-left: 6px;
-    }
-
-    #basic_details h6 {
-      font-size: 16px !important;
-      font-weight: 500 !important;
-    }
-
-    #update_column .edu h5 {
-      font-size: 1.2rem !important;
-      color: var(--gray);
-      padding: 5px 0;
-    }
-
-    #update_column h2 {
-      font-weight: 700;
-      font-size: 1.9rem;
-    }
-
-    #update_column h5 {
-      color: var(--black);
-      padding: 10px 0;
-      cursor: pointer;
-    }
-
-    #update_column p {
-      font-size: 0.8;
-    }
-
-    #update_column a {
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      float: right;
-    }
-
-
-    #update_column .col-md-3,
-    .col-md-8 {
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    }
-
-    #update_column #accom p {
-      margin-top: -10px;
-      font-size: 0.8rem;
-    }
-
-     h5 {
-      color: var(--black);
-    }
-
-     label {
-      color: var(--black);
-      font-size: 1rem;
-    }
-
-    #skill_modal label {
-      margin: 5px 4px;
-    }
-  </style>
 </head>
 
 <body>
@@ -117,7 +29,7 @@
               <a class="nav-link" href="./job_seeker_main_page.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">about us</a>
+              <a class="nav-link" href="../about_us.html">about us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../find_jobs.html" target="_blank">find jobs</a>
@@ -191,7 +103,9 @@
     </div>
   </section>
   <!--                       update details                     -->
-  <section class="container-md container-fluid mt-5" id="update_column">
+  <section class="container-md container-fluid mt-5" id="update_column" style=" 
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  ">
     <div class="row justify-content-around">
       <div class="col-12 col-md-3 p-4  bg-light">
         <h2>Update</h2>

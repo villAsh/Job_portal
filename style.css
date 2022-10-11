@@ -187,7 +187,7 @@ h6{
     margin: 40px auto !important;
 }
  #about_us .imgabout{
-    height: 70vh !important;
+    height: 60vh !important;
  }
  #about_us .check-p p{
     font-size: 14px;
@@ -281,3 +281,268 @@ h6{
     transform: scale(1.2);
     transition: ease-in-out 0.6s; 
 }
+
+/****** JOB SEEKER CSS ******/
+ .profile_img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .camera {
+      position: absolute;
+      top: 5%;
+      left: 7%;
+      z-index: 2;
+      background-color: white;
+      padding: 8px;
+      border-radius: 28px;
+    }
+
+    .camera:hover {
+      transform: scale(1.1);
+      transition: ease-in-out 0.2s;
+    }
+
+    .user_name {
+      position: relative;
+    }
+
+    .fa-pen {
+      position: absolute;
+      bottom: 60%;
+      margin-left: 6px;
+    }
+
+    #basic_details h6 {
+      font-size: 16px !important;
+      font-weight: 500 !important;
+    }
+
+    #update_column .edu h5 {
+      font-size: 1.2rem !important;
+      color: var(--gray);
+      padding: 5px 0;
+    }
+
+    #update_column h2 {
+      font-weight: 700;
+      font-size: 1.9rem;
+    }
+
+    #update_column h5 {
+      color: var(--black);
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    #update_column p {
+      font-size: 0.8;
+    }
+
+    #update_column a {
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      float: right;
+    }
+    #update_column #accom p {
+      margin-top: -10px;
+      font-size: 0.8rem;
+    }
+
+     h5 {
+      color: var(--black);
+    }
+
+     label {
+      color: var(--black);
+      font-size: 1rem;
+    }
+
+    #skill_modal label {
+      margin: 5px 4px;
+    }
+
+    /**********     ABOUT US PAGE **********/
+    .banner{
+        background: url("./images/about_us_bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20vh;
+        max-width: 100%;
+      }
+      #au_hero_section p{
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      /*********** JOB FORMAT PAGE *********/
+
+      #job_format .card{
+        margin-top: 20px;
+        background: url("./images/about_us_bg.jpg") center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: 100%;
+    }
+    .fa-star {
+        color: #FFC000;
+    }
+
+    .card-text p {
+        margin-top: 12px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .posted_days_ago {
+        font-size: 14px;
+        background-color: rgba(0, 229, 114, 0.2);
+        max-height: 35px !important;
+    }
+
+    .posted_days_ago .fa-clock-rotate-left {
+        color: var(--green);
+    }
+
+    .card-footer {
+        background-color: white !important;
+    }
+
+    .saveBtn {
+        padding: 7px 19px;
+        border: 1px solid var(--green);
+        outline: none !important;
+        background-color: white !important;
+    }
+
+    .applyBtn {
+        padding: 7px 19px;
+        background-color: var(--green) !important;
+        border: 1px solid white;
+    }
+
+    #job_desc {
+        box-shadow: rgba(0,0,0,0.15) 0px 5px 15px 0px;
+    }
+    ul li{
+        font-size: 1.2rem;
+    }
+
+    #footer h5{
+     color: white;
+     font-size: 20px;
+    }
+
+    /************* JOB SCAM PAGE ***********/
+       
+        #job_scam h5 {
+            text-align: center;
+            color: gray;
+            padding: 10px;
+        }
+    
+       #job_scam h2{
+            color: #00e572;
+            text-align: center;
+        }
+    
+        span {
+            text-decoration: underline;
+        }
+    
+    /***************FOOTER*********/
+    #footer h5{
+        color: white;
+        text-align: start !important;
+        margin-left: -10px;
+     }
+     #footer p{
+        font-size: 15px;
+        color: white;
+     }
+     #footer .footer_row{
+        color: #f0f0f0 !important;
+     }
+     #footer .fa-glasses{
+        color: white;
+    }
+    .fa-brands{
+        font-size: 29px;  
+    }
+    .fa-facebook{
+        color: #4267B2;
+    }
+    .fa-twitter{
+        color: 	#1DA1F2;
+    }
+    .fa-google{
+        color: 	#4285F4;
+    }
+    .fa-linkedin{
+        color:  #0077b5;
+    }
+    .fa-brands:hover{
+        transform: scale(1.2);
+        transition: ease-in-out 0.6s; 
+    }
+    
+/************* EXPLORE JOBS PAGE ********/
+            .breadcrumb{
+                cursor: pointer;
+            }
+            .active1{
+                color: var(--green);
+            }
+            .job_container{
+                border: 1ps solid var(--gray) !important;
+            }
+            .card{
+            margin-top: 20px;
+            cursor: pointer;
+            border: 2px solid lightgray;
+        }
+        .card:hover{
+            box-shadow: 0 0 1px 1px lightblue;
+        }
+        .fa-star {
+            color: #FFC000;
+        }
+
+        .card-text p {
+            margin-top: 12px;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .posted_days_ago {
+            font-size: 14px;
+            background-color: rgba(0, 229, 114, 0.2);
+            max-height: 35px !important;
+        }
+
+        .posted_days_ago .fa-clock-rotate-left {
+            color: var(--green);
+        }
+
+        .card-footer {
+            background-color: white !important;
+        }
+
+        .saveBtn {
+            padding: 7px 19px;
+            border: 1px solid var(--green);
+            outline: none !important;
+            background-color: white !important;
+        }
+
+        .applyBtn {
+            padding: 7px 19px;
+            background-color: var(--green) !important;
+            border: 1px solid white;
+        }
