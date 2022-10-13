@@ -64,7 +64,7 @@
 
     <section class="container-fluid bg-light" id="job_format">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-10" id="job_header">
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
@@ -103,7 +103,7 @@
                             </div>
                             <div class="bookmark d-inline-block float-end">
                                 <button class="text-success saveBtn" type="button">Save</button>
-                                <button class="text-light applyBtn">Apply</button>
+                                <button class="text-light applyBtn" " data-bs-toggle="modal" data-bs-target="#apply_job_modal">Apply</button>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,65 @@
                         <li>Lorem, ipsum dolor.</li>
                         <li>Lorem ipsum, dolor.</li>
                     </ul>
-                </div>                      
+                </div> 
+              
+              <div class="border border-dark border-1 rounded-3 mt-4" id="company_div">
+                  <h3 class="header p-3">About Company :</h3>
+                  <div class="d-flex flex-wrap align-items-center justify-content-start mt-5 p-3 ">
+                      <img src="./images/company_logicrays.png" alt="company logo" class="company_logo img-fluid me-3">
+                      <h4 class="mt-3 pt-3 pt-md-0">LogicRays Technologies pvt ltd</h4>
+                  </div>
+                  <div class=" mt-2 p-3">
+                    <p class="fw-bold">Information Technology & Services &middot; 30-100 employees </p>
+                    <p class="text-start">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, rem fugit. Illo laborum cumque quo eum dicta commodi obcaecati optio, placeat a tenetur sunt! Veniam esse debitis quia commodi error, inventore accusamus non est laudantium id ex deserunt, labore perferendis hic vitae minima sed provident ipsam cum voluptatum nobis iste.</p>
+                  </div>
+         
+              </div>  
+              <div class="bookmark d-inline-block float-end p-3">
+                <button class="text-light applyBtn " data-bs-toggle="modal" data-bs-target="#apply_job_modal">Apply</button>
+            </div>   
+            <!--
+              Apply Job Model
+            -->
+            <div class="modal fade" id="apply_job_modal" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content ">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Apply To LogicRays Technologies </h4>
+                  </div>
+                  <div class="modal-body">
+                   <h4>Contact Info</h4>
+                   <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="d-flex flex-row justify-content-start">
+                        <div class="me-5">
+                          <img src="../images/emp_mng_pro1.jpg" alt="profile img 1" class="rounded-pill">
+                        </div>
+                        <div class="d-flex flex-column justify-content-around">
+                          <h4>Pravin Patel</h4>
+                          <h6 class="text-muted">HTML | CSS | JS | FrontEnd Web Developer</h6>
+                          <h6 class="text-muted">Ahmedebad</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="apply_email" class="form-label text-black-50">Email Address*</label>
+                      <input type="email" id="apply_email" class="form-control" required>
+                    </div>
+                    <div class="col-12 mt-3">
+                      <label for="apply_number" class="form-label text-black-50">Mobile Number*</label>
+                      <input type="number" class="form-control" required>
+                    </div>
+                    <p class="text-black-50 mt-3">Submitting this application won’t change your LinkedIn profile.</p>
+                  </div>
+                  <div class="bookmark d-inline-block float-end p-3">
+                    <button id="apply_btn" class="text-light applyBtn border border-dark border-2" type="submit">Submit</button>
+                </div>  
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </section>

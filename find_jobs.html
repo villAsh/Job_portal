@@ -76,16 +76,15 @@
         </div>
         <div class="p-1 px-2 bg-light rounded-3 my-4 input-group">
             <img src="../images/find_jobs_search_icon.svg" alt="search logo" class="input-group-text">
-          <input type="text" id="job_exp" list="exp" class="form-control" placeholder="Enter Experience">
-            <div>
-              <datalist id="exp"">
-                <option value="fresher"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </datalist>
-            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Fresher</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5+</option>
+              <option value="10">10+</option>
+            </select>
         </div>
         <div class="p-1 px-2 bg-light rounded-3 input-group">
           <img src="../images/find_jobs_search_icon.svg" alt="search logo" class="input-group-text ">
@@ -136,22 +135,22 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="exp_header">
               <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse"
-                data-bs-target="#exp_accordion" aria-controls="exp_accordion">Experience</button>
+                data-bs-target="#jobType_accordion" aria-controls="exp_accordion">Job Type</button>
             </h2>
-            <div id="exp_accordion" class="accordion-collapse collapse show" data-parent="filter_accordion">
+            <div id="jobType_accordion" class="accordion-collapse collapse show" data-parent="filter_accordion">
               <div class="accordion-body">
-                <input type="checkbox" id="fresher">
-                <label for="fresher">Fresher</label><br>
-                <input type="checkbox" id="yearOne">
-                <label for="yearOne">1 years</label><br>
-                <input type="checkbox" id="yearTwo">
-                <label for="yearTwo">2 years</label><br>
-                <input type="checkbox" id="yearThree">
-                <label for="frehser">3 years</label><br>
-                <input type="checkbox" id="yearFour">
-                <label for="yearFour">4 years</label><br>
-                <input type="checkbox" id="fivePlus">
-                <label for="fivePlus">5+ years</label>
+                <input type="checkbox" id="Internship">
+                <label for="Internship">Internship</label><br>
+                <input type="checkbox" id="Fulltime">
+                <label for="Fulltime">Full-Time</label><br>
+                <input type="checkbox" id="Parttime">
+                <label for="Parttime">Part-Time</label><br>
+                <input type="checkbox" id="Halftime">
+                <label for="HalfTime">Half-Time</label><br>
+                <input type="checkbox" id="Contract">
+                <label for="Contract">Contract</label><br>
+                <input type="checkbox" id="Trainee">
+                <label for="Trainee">Trainee</label>
               </div>
             </div>
           </div>
@@ -259,7 +258,7 @@
           </div>
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-9" id="job_header">
         <div class="card">
           <div class="card-body">
             <div class="card-title">

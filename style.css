@@ -382,7 +382,7 @@ label {
 
 /*********** JOB FORMAT PAGE *********/
 
-#job_format .card {
+#job_format #job_header .card {
 	margin-top: 20px;
 	background: url("./images/about_us_bg.jpg") center center;
 	background-repeat: no-repeat;
