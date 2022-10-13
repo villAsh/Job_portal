@@ -82,6 +82,7 @@ h6 {
 	color: var(--black) !important;
 }
 /****************Main Section******************/
+
 #main_section .img-fluid {
 	height: 400px;
 	width: 50vw;
@@ -90,8 +91,13 @@ h6 {
 	top: -10%;
 }
 #main_section {
-	max-height: 50vh;
 	margin: 6rem 0 5rem 0;
+}
+/****** MEDIA QUERY FOR HERO SECTION *****/
+@media screen and (max-width: 767px){
+	#main_section .img-fluid {
+	display: none;
+	}
 }
 /*********/
 #main_section .btn_search {
